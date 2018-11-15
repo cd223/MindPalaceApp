@@ -17,8 +17,8 @@ import com.estimote.indoorsdk_module.view.IndoorLocationView;
 
 public class Main extends AppCompatActivity {
 
-    private final String APP_ID = "app_id";
-    private final String APP_TOKEN = "app_token";
+    private final String APP_ID = "mind-palace-maker-9zr";
+    private final String APP_TOKEN = "058c5ce426b9d034d8e7b2c5f5b64b8e";
     private final String LOCATION_ID = "loc_id";
     private CloudCredentials cloudCredentials;
     private ScanningIndoorLocationManager indoorLocationManager;
