@@ -19,8 +19,9 @@ public class Main extends AppCompatActivity {
 
     private final String APP_ID = "mind-palace-maker-9zr";
     private final String APP_TOKEN = "058c5ce426b9d034d8e7b2c5f5b64b8e";
-    private final String LOCATION_ID = "loc_id";
-    private CloudCredentials cloudCredentials;
+    private final String LOCATION_ID = "cjd47-s-location-nwe";
+    private CloudCredentials cloudCredentials = new EstimoteCloudCredentials(APP_ID, APP_TOKEN);
+    private IndoorCloudManager cloudManager = new IndoorCloudManagerFactory().create(this, cloudCredentials);
     private ScanningIndoorLocationManager indoorLocationManager;
 
     @Override
@@ -28,28 +29,26 @@ public class Main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Use IndoorCloudManagerFactory to get objects for communicating with Estimote cloud.
-        cloudCredentials = new EstimoteCloudCredentials(APP_ID, APP_TOKEN);
-        IndoorCloudManager cloudManager = new IndoorCloudManagerFactory().create(this, cloudCredentials);
         cloudManager.getLocation(LOCATION_ID, new CloudCallback<Location>() {
             @Override
             public void success(Location location) {
-                // ...do something with Location object... (needed to initialise IndoorLocationManager!)
-
-                // Use IndoorLocationView to display location on screen. It exists in activity_main.xml.
                 final IndoorLocationView indoorLocationView = findViewById(R.id.indoor_view);
                 indoorLocationView.setLocation(location);
 
-                // IndoorLocationManager
-                ScanningIndoorLocationManager indoorLocationManager =
+                indoorLocationManager =
                         new IndoorLocationManagerBuilder(getApplicationContext(), location, cloudCredentials)
                                 .withDefaultScanner()
                                 .build();
+
+                indoorLocationManager.startPositioning();
+
+                System.out.println(location.getName());
 
                 indoorLocationManager.setOnPositionUpdateListener(new OnPositionUpdateListener() {
                     @Override
                     public void onPositionUpdate(LocationPosition locationPosition) {
                         indoorLocationView.updatePosition(locationPosition);
+                        System.out.println(locationPosition.getX());
                     }
 
                     @Override
@@ -69,12 +68,10 @@ public class Main extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        indoorLocationManager.startPositioning();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        indoorLocationManager.stopPositioning();
     }
 }
