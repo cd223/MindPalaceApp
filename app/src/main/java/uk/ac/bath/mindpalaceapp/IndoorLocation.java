@@ -2,8 +2,8 @@ package uk.ac.bath.mindpalaceapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
-
 import com.estimote.indoorsdk.EstimoteCloudCredentials;
 import com.estimote.indoorsdk.IndoorLocationManagerBuilder;
 import com.estimote.indoorsdk_module.algorithm.OnPositionUpdateListener;
@@ -42,6 +42,8 @@ public class IndoorLocation extends AppCompatActivity {
                         Toast.LENGTH_SHORT);
                 toast.show();
 
+                final TextView xpos = findViewById(R.id.xpos);
+                final TextView ypos = findViewById(R.id.ypos);
                 final IndoorLocationView indoorLocationView = findViewById(R.id.indoor_view);
                 indoorLocationView.setLocation(location);
 
@@ -57,6 +59,8 @@ public class IndoorLocation extends AppCompatActivity {
                     public void onPositionUpdate(LocationPosition locationPosition) {
                         indoorLocationView.updatePosition(locationPosition);
                         System.out.println(locationPosition.getX());
+                        xpos.setText(""+locationPosition.getX());
+                        ypos.setText(""+locationPosition.getX());
                     }
 
                     @Override

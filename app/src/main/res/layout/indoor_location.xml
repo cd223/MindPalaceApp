@@ -1,15 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IndoorLocation"
-    android:orientation="vertical">
+    android:background="@color/colorAccent"
+    android:orientation="vertical"
+    tools:context=".IndoorLocation">
 
     <com.estimote.indoorsdk_module.view.IndoorLocationView
         android:id="@+id/indoor_view"
-        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:background="#c3b8ef"/>
+        android:layout_height="164dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/x_position"
+        android:textSize="24sp"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:id="@+id/xpos"
+        android:layout_width="346dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:textSize="24sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/y_position"
+        android:textSize="24sp"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:id="@+id/ypos"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:textSize="24sp" />
+
+
 </LinearLayout>
