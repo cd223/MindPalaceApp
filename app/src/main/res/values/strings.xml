@@ -3,4 +3,9 @@
     <string name="indoorLocationButton">Indoor Location</string>
     <string name="x_position">X Position</string>
     <string name="y_position">Y Position</string>
+    <string name="new_note">New Note</string>
+    <string name="CreateNoteTitle">Title</string>
+    <string name="PalaceId">Palace ID</string>
+    <string name="NoteCreationButton">Create Note</string>
+    <string name="NotesCreationDescription">Description</string>
 </resources>

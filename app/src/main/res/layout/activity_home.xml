@@ -15,23 +15,21 @@
         android:layout_height="209dp"
         android:background="@android:color/transparent"
         app:srcCompat="@drawable/logo"
-        android:layout_marginBottom="15dp" />
+        android:layout_marginBottom="15dp">
+    </ImageView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/goToIndoorLocation"
+        android:layout_width="@dimen/btn_width"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:onClick="goToIndoorLocation"
+        android:text="@string/indoorLocationButton" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="80px"
-            android:id="@+id/profileButton"
-            android:onClick="goToIndoorLocation"
-            android:text="@string/indoorLocationButton"
-            android:textAllCaps="false"
-            android:layout_marginRight="25px"
-            android:background="@color/colorButtonPrimary"/>
-    </LinearLayout>
+    <Button
+        android:id="@+id/goToCreateNote"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="wrap_content"
+        android:onClick="goToCreateNote"
+        android:text="@string/NoteCreationButton" />
 
 </LinearLayout>

@@ -32,7 +32,7 @@ public class IndoorLocation extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.drawable.logo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
-        setContentView(R.layout.indoor_location);
+        setContentView(R.layout.activity_indoor_location);
 
         cloudManager.getLocation(LOCATION_ID, new CloudCallback<Location>() {
             @Override
@@ -58,7 +58,7 @@ public class IndoorLocation extends AppCompatActivity {
                     @Override
                     public void onPositionUpdate(LocationPosition locationPosition) {
                         indoorLocationView.updatePosition(locationPosition);
-                        System.out.println(locationPosition.getX());
+                        System.out.println(locationPosition.getX() + locationPosition.getY());
                         xpos.setText(""+locationPosition.getX());
                         ypos.setText(""+locationPosition.getX());
                     }

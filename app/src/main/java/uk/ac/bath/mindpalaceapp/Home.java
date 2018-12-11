@@ -10,11 +10,16 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home);
+        setContentView(R.layout.activity_home);
     }
 
     public void goToIndoorLocation(View view) {
         Intent intent = new Intent(this, IndoorLocation.class);
+        startActivity(intent);
+    }
+
+    public void goToCreateNote(View view) {
+        Intent intent = new Intent(this, CreateNote.class);
         startActivity(intent);
     }
 
