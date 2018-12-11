@@ -2,6 +2,8 @@ package uk.ac.bath.mindpalaceapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
+
 import com.estimote.indoorsdk.EstimoteCloudCredentials;
 import com.estimote.indoorsdk.IndoorLocationManagerBuilder;
 import com.estimote.indoorsdk_module.algorithm.OnPositionUpdateListener;
@@ -32,6 +34,11 @@ public class Main extends AppCompatActivity {
         cloudManager.getLocation(LOCATION_ID, new CloudCallback<Location>() {
             @Override
             public void success(Location location) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Location '" + location.getName() + "' loaded from Estimote Cloud.",
+                        Toast.LENGTH_SHORT);
+                toast.show();
+
                 final IndoorLocationView indoorLocationView = findViewById(R.id.indoor_view);
                 indoorLocationView.setLocation(location);
 
@@ -41,8 +48,6 @@ public class Main extends AppCompatActivity {
                                 .build();
 
                 indoorLocationManager.startPositioning();
-
-                System.out.println(location.getName());
 
                 indoorLocationManager.setOnPositionUpdateListener(new OnPositionUpdateListener() {
                     @Override
@@ -60,7 +65,10 @@ public class Main extends AppCompatActivity {
 
             @Override
             public void failure(EstimoteCloudException e) {
-                // oops! Failure to get location from cloud.
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "ERROR: Failed to get location from Estimote Cloud.",
+                        Toast.LENGTH_SHORT);
+                toast.show();
             }
         });
     }
