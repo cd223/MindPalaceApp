@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Hold That Thought</string>
+    <string name="indoorLocationButton">Indoor Location</string>
 </resources>

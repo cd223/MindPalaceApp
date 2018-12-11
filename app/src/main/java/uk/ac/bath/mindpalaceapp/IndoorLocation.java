@@ -17,7 +17,7 @@ import com.estimote.indoorsdk_module.cloud.Location;
 import com.estimote.indoorsdk_module.cloud.LocationPosition;
 import com.estimote.indoorsdk_module.view.IndoorLocationView;
 
-public class Main extends AppCompatActivity {
+public class IndoorLocation extends AppCompatActivity {
 
     private final String APP_ID = "mind-palace-maker-9zr";
     private final String APP_TOKEN = "058c5ce426b9d034d8e7b2c5f5b64b8e";
@@ -29,7 +29,10 @@ public class Main extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.logo);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+        setContentView(R.layout.indoor_location);
 
         cloudManager.getLocation(LOCATION_ID, new CloudCallback<Location>() {
             @Override
