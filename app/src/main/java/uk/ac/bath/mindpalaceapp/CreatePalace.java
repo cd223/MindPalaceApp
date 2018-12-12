@@ -14,33 +14,32 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.Volley;
+
 import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class CreateNote extends AppCompatActivity {
+public class CreatePalace extends AppCompatActivity {
 
-    private static final String url = "https://mindpalaceservice.herokuapp.com/newnote";
-    private static final String TAG = CreateNote.class.getName();
+    private static final String url = "https://mindpalaceservice.herokuapp.com/newpalace";
+    private static final String TAG = CreatePalace.class.getName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_note);
+        setContentView(R.layout.activity_create_palace);
     }
 
-    public void createNewNote(View view) {
-        final EditText mNoteTitle = findViewById(R.id.noteCreationTitle);
-        final EditText mNotePalaceId = findViewById(R.id.palace_id);
-        final EditText mNoteDescription = findViewById(R.id.noteDescription);
+    public void createNewPalace(View view) {
+        final EditText mPalaceTitle = findViewById(R.id.palaceCreationTitle);
+        final EditText mPalaceDescription = findViewById(R.id.palaceDescription);
+        final EditText mPalaceUserId = findViewById(R.id.user_id);
 
         Map<String, Object> json = new HashMap<>();
-        json.put("palace_id", mNotePalaceId.getText().toString());
-        json.put("note_title", mNoteTitle.getText().toString());
-        json.put("note_description", mNoteDescription.getText().toString());
-        json.put("note_location", "1,1");
-        json.put("note_status",true);
+        json.put("user_id", mPalaceUserId.getText().toString());
+        json.put("palace_title", mPalaceTitle.getText().toString());
+        json.put("palace_description", mPalaceDescription.getText().toString());
 
         JSONObject jsonObject = new JSONObject(json);
         RequestQueue queue = Volley.newRequestQueue(this);

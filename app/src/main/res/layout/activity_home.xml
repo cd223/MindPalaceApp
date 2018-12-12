@@ -22,14 +22,33 @@
         android:id="@+id/goToIndoorLocation"
         android:layout_width="@dimen/btn_width"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:onClick="goToIndoorLocation"
-        android:text="@string/indoorLocationButton" />
+        android:text="@string/indoorLocationButton"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/goToCreatePalace"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="wrap_content"
+        android:onClick="goToCreatePalace"
+        android:text="@string/PalaceCreationButton"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/goToCreateNote"
         android:layout_width="@dimen/btn_width"
         android:layout_height="wrap_content"
         android:onClick="goToCreateNote"
-        android:text="@string/NoteCreationButton" />
+        android:text="@string/NoteCreationButton"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/goToCreateUser"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="wrap_content"
+        android:onClick="goToCreateUser"
+        android:text="@string/UserCreationButton"
+        android:textAllCaps="false" />
 
 </LinearLayout>

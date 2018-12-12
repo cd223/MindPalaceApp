@@ -18,9 +18,18 @@ public class Home extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goToCreatePalace(View view) {
+        Intent intent = new Intent(this, CreatePalace.class);
+        startActivity(intent);
+    }
+
     public void goToCreateNote(View view) {
         Intent intent = new Intent(this, CreateNote.class);
         startActivity(intent);
     }
 
+    public void goToCreateUser(View view) {
+        Intent intent = new Intent(this, CreateUser.class);
+        startActivity(intent);
+    }
 }

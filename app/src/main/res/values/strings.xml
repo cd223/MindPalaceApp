@@ -1,11 +1,20 @@
 <resources>
     <string name="app_name">Hold That Thought</string>
     <string name="indoorLocationButton">Indoor Location</string>
-    <string name="x_position">X Position</string>
-    <string name="y_position">Y Position</string>
     <string name="new_note">New Note</string>
     <string name="CreateNoteTitle">Title</string>
     <string name="PalaceId">Palace ID</string>
     <string name="NoteCreationButton">Create Note</string>
     <string name="NotesCreationDescription">Description</string>
+    <string name="new_palace">New Palace</string>
+    <string name="CreatePalaceTitle">Title</string>
+    <string name="UserId">User ID</string>
+    <string name="PalaceCreationDescription">Description</string>
+    <string name="PalaceCreationButton">Create Palace</string>
+    <string name="UserCreationButton">Create User</string>
+    <string name="new_user">New User</string>
+    <string name="UserCreationPassword">Password</string>
+    <string name="UserCreationUsername">Username</string>
+    <string name="UserCreationName">Name</string>
+    <string name="position">Position (x,y)</string>
 </resources>

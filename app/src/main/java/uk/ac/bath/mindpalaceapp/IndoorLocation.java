@@ -42,8 +42,7 @@ public class IndoorLocation extends AppCompatActivity {
                         Toast.LENGTH_SHORT);
                 toast.show();
 
-                final TextView xpos = findViewById(R.id.xpos);
-                final TextView ypos = findViewById(R.id.ypos);
+                final TextView pos = findViewById(R.id.pos);
                 final IndoorLocationView indoorLocationView = findViewById(R.id.indoor_view);
                 indoorLocationView.setLocation(location);
 
@@ -58,9 +57,8 @@ public class IndoorLocation extends AppCompatActivity {
                     @Override
                     public void onPositionUpdate(LocationPosition locationPosition) {
                         indoorLocationView.updatePosition(locationPosition);
-                        System.out.println(locationPosition.getX() + locationPosition.getY());
-                        xpos.setText(""+locationPosition.getX());
-                        ypos.setText(""+locationPosition.getX());
+                        System.out.println("X: " + locationPosition.getX() + " Y: " + locationPosition.getY());
+                        pos.setText(""+locationPosition.getX() + "," + locationPosition.getY());
                     }
 
                     @Override
