@@ -32,4 +32,10 @@ public class Home extends AppCompatActivity {
         Intent intent = new Intent(this, CreateUser.class);
         startActivity(intent);
     }
+
+    public void goToViewNote(View view) {
+        Intent intent = new Intent(this, ViewNote.class);
+        startActivity(intent);
+    }
+
 }

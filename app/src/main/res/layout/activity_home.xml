@@ -51,4 +51,12 @@
         android:text="@string/UserCreationButton"
         android:textAllCaps="false" />
 
+    <Button
+        android:id="@+id/goToViewNote"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="wrap_content"
+        android:onClick="goToViewNote"
+        android:text="@string/ViewNoteButton"
+        android:textAllCaps="false" />
+
 </LinearLayout>

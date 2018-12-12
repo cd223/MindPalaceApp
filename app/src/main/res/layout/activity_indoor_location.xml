@@ -30,7 +30,7 @@ android:background="@color/colorAccent">
         <com.estimote.indoorsdk_module.view.IndoorLocationView
             android:id="@+id/indoor_view"
             android:layout_width="match_parent"
-            android:layout_height="281dp" />
+            android:layout_height="236dp" />
 
         <TextView
             android:layout_width="wrap_content"

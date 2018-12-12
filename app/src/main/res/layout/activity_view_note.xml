@@ -17,7 +17,7 @@
         android:layout_marginRight="11dp">
 
         <LinearLayout
-            android:id="@+id/create_user"
+            android:id="@+id/create_note"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorAccent"
@@ -43,47 +43,70 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/new_user"
+                android:text="@string/note_details"
                 android:textSize="24sp" />
 
             <EditText
-                android:id="@+id/userCreationName"
+                android:id="@+id/noteViewTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:ems="10"
-                android:hint="@string/UserCreationName"
-                android:inputType="textCapWords" />
+                android:enabled="false"
+                android:hint="@string/CreateNoteTitle"
+                android:focusable="false"
+                android:inputType="none" />
 
             <EditText
-                android:id="@+id/userCreationUsername"
+                android:id="@+id/palace_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:ems="10"
-                android:hint="@string/UserCreationUsername"
-                android:inputType="textCapWords" />
+                android:hint="@string/PalaceId"
+                android:focusable="false"
+                android:inputType="none" />
 
             <EditText
-                android:id="@+id/userCreationPassword"
+                android:id="@+id/noteDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:ems="10"
-                android:inputType="textPassword"
-                android:hint="@string/UserCreationPassword" />
+                android:hint="@string/NotesCreationDescription"
+                android:focusable="false"
+                android:inputType="none" />
 
-            <Button
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorButtonPrimary"
-                android:onClick="createNewUser"
-                android:text="@string/UserCreationButton"
-                android:textAllCaps="false" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="132dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorButtonPrimary"
+                    android:textSize="30dp"
+                    android:textColor="@color/Remembered"
+                    android:text="@string/Remembered"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:layout_width="132dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorButtonPrimary"
+                    android:textSize="30dp"
+                    android:textColor="@color/NotRemembered"
+                    android:text="@string/NotRemembered"
+                    android:textAllCaps="false" />
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

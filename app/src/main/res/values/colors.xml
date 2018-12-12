@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#301C7F</color>
     <color name="colorAccent">#c3b8ef</color>
     <color name="colorButtonPrimary">#e8e8e8</color>
+    <color name="NotRemembered">#e20003</color>
+    <color name="Remembered">#00962a</color>
 </resources>
