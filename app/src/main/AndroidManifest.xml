@@ -25,6 +25,7 @@
         <activity android:name=".CreateUser" />
         <activity android:name=".CreatePalace" />
         <activity android:name=".ViewNote"/>
+        <activity android:name=".ViewPalace"/>
         <activity android:name=".Home" />
     </application>
 </manifest>

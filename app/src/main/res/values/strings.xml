@@ -21,4 +21,8 @@
     <string name="NotRemembered">✖</string>
     <string name="note_details">Note Details</string>
     <string name="ViewNoteButton">View Note</string>
+    <string name="NotesViewDescription">Description</string>
+    <string name="palace_details">Palace Details</string>
+    <string name="viewPalaceTitle">Title</string>
+    <string name="ViewPalaceButton">View Palace</string>
 </resources>

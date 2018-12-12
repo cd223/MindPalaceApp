@@ -43,23 +43,23 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/note_details"
+                android:text="@string/palace_details"
                 android:textSize="24sp" />
 
             <EditText
-                android:id="@+id/noteCreationTitle"
+                android:id="@+id/palaceTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:ems="10"
                 android:enabled="false"
-                android:hint="@string/CreateNoteTitle"
+                android:hint="@string/viewPalaceTitle"
                 android:focusable="false"
                 android:inputType="none" />
 
             <EditText
-                android:id="@+id/palace_id"
+                android:id="@+id/user_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -70,43 +70,15 @@
                 android:inputType="none" />
 
             <EditText
-                android:id="@+id/noteDescription"
+                android:id="@+id/palaceDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:ems="10"
-                android:hint="@string/NotesCreationDescription"
+                android:hint="@string/PalaceCreationDescription"
                 android:focusable="false"
                 android:inputType="none" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <Button
-                    android:layout_width="132dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/colorButtonPrimary"
-                    android:textSize="30dp"
-                    android:textColor="@color/Remembered"
-                    android:text="@string/Remembered"
-                    android:textAllCaps="false" />
-
-                <Button
-                    android:layout_width="132dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/colorButtonPrimary"
-                    android:textSize="30dp"
-                    android:textColor="@color/NotRemembered"
-                    android:text="@string/NotRemembered"
-                    android:textAllCaps="false" />
-            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

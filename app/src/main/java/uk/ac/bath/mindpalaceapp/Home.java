@@ -38,4 +38,8 @@ public class Home extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goToViewPalace(View view) {
+        Intent intent = new Intent(this, ViewPalace.class);
+        startActivity(intent);
+    }
 }

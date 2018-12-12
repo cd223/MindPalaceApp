@@ -11,10 +11,13 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -22,34 +25,36 @@ import java.util.Map;
 
 public class ViewPalace extends AppCompatActivity {
 
-    private static final String url = "https://mindpalaceservice.herokuapp.com/nearestnote/1?xpos=3.2&ypos=2.5";
+    private static final String url = "https://mindpalaceservice.herokuapp.com/palace/1";
     private static final String TAG = ViewPalace.class.getName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_note);
+        setContentView(R.layout.activity_view_palace);
+        viewPalace();
     }
 
-    public void viewNote(View view) {
-        final EditText mNoteTitle = findViewById(R.id.noteCreationTitle);
-        final EditText mNotePalaceId = findViewById(R.id.palace_id);
-        final EditText mNoteDescription = findViewById(R.id.noteDescription);
+    public void viewPalace() {
+        final EditText mPalaceTitle = findViewById(R.id.palaceTitle);
+        final EditText mPalaceDescription = findViewById(R.id.palaceDescription);
+        final EditText mPalaceUserId = findViewById(R.id.user_id);
 
-        Map<String, Object> json = new HashMap<>();
-        json.put("palace_id", mNotePalaceId.getText().toString());
-        json.put("note_title", mNoteTitle.getText().toString());
-        json.put("note_description", mNoteDescription.getText().toString());
-        json.put("note_location", "1,1");
-        json.put("note_status",true);
-
-        JSONObject jsonObject = new JSONObject(json);
         RequestQueue queue = Volley.newRequestQueue(this);
-        JsonRequest<JSONObject> jsonRequest = new JsonObjectRequest(Request.Method.POST, url, jsonObject,
-                new Response.Listener<JSONObject>() {
+        JsonRequest<JSONArray> jsonRequest = new JsonArrayRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONArray>() {
                     @Override
-                    public void onResponse(JSONObject response) {
+                    public void onResponse(JSONArray response) {
                         Log.d(TAG, response.toString());
+
+                        try {
+                            JSONObject noteJson = response.getJSONObject(0);
+                            mPalaceTitle.setText(""+noteJson.get("palace_title"));
+                            mPalaceUserId.setText(""+noteJson.get("user_id"));
+                            mPalaceDescription.setText(""+noteJson.get("palace_description"));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -58,8 +63,6 @@ public class ViewPalace extends AppCompatActivity {
             }
         });
         queue.add(jsonRequest);
-        Intent intent = new Intent(this, Home.class);
-        startActivity(intent);
     }
 
     public void goToHome(View view) {
