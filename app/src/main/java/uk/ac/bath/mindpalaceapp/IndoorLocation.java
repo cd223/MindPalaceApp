@@ -9,13 +9,13 @@ import com.estimote.indoorsdk.IndoorLocationManagerBuilder;
 import com.estimote.indoorsdk_module.algorithm.OnPositionUpdateListener;
 import com.estimote.indoorsdk_module.algorithm.ScanningIndoorLocationManager;
 import com.estimote.indoorsdk_module.cloud.CloudCallback;
-import com.estimote.indoorsdk_module.cloud.CloudCredentials;
 import com.estimote.indoorsdk_module.cloud.EstimoteCloudException;
 import com.estimote.indoorsdk_module.cloud.IndoorCloudManager;
 import com.estimote.indoorsdk_module.cloud.IndoorCloudManagerFactory;
 import com.estimote.indoorsdk_module.cloud.Location;
 import com.estimote.indoorsdk_module.cloud.LocationPosition;
 import com.estimote.indoorsdk_module.view.IndoorLocationView;
+import com.estimote.internal_plugins_api.cloud.CloudCredentials;
 
 public class IndoorLocation extends AppCompatActivity {
 
