@@ -35,4 +35,8 @@
     <string name="createmenu">Create Mode</string>
     <string name="trainmenu">Train Mode</string>
     <string name="train">Go!</string>
+    <string name="trackmenu">Track Mode</string>
+    <string name="settingsmenu">Settings</string>
+    <string name="deletePalaceButton">Delete Palace</string>
+    <string name="deleteAccountButton">Delete Account</string>
 </resources>
