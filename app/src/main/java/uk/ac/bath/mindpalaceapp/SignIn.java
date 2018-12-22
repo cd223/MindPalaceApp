@@ -52,7 +52,7 @@ public class SignIn extends AppCompatActivity {
                             if (realPass.equals(password)) {
                                 Intent intent = new Intent(curView.getContext(), MainMenu.class);
                                 intent.putExtra("user_username", username);
-                                intent.putExtra("user_name", name);
+                                intent.putExtra("user_name", name.split(" ")[0]);
                                 startActivity(intent);
                                 Toast toast = Toast.makeText(getApplicationContext(),"Login successful.",
                                         Toast.LENGTH_SHORT);

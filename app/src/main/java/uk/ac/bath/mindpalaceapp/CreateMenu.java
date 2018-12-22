@@ -7,6 +7,9 @@ import android.view.View;
 
 public class CreateMenu extends AppCompatActivity {
 
+    private String username;
+    private String name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -14,10 +17,14 @@ public class CreateMenu extends AppCompatActivity {
         getSupportActionBar().setLogo(R.drawable.logo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.activity_create_menu);
+        username = getIntent().getStringExtra("user_username");
+        name = getIntent().getStringExtra("user_name");
     }
 
     public void goToCreatePalace(View view) {
         Intent intent = new Intent(this, CreatePalace.class);
+        intent.putExtra("user_username", username);
+        intent.putExtra("user_name", name);
         startActivity(intent);
     }
 

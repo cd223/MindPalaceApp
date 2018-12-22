@@ -24,7 +24,8 @@ public class CreatePalace extends AppCompatActivity {
 
     private static final String url = "https://mindpalaceservice.herokuapp.com/newpalace";
     private static final String TAG = CreatePalace.class.getName();
-    private static String username;
+    private String username;
+    private String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,16 +35,19 @@ public class CreatePalace extends AppCompatActivity {
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.activity_create_palace);
         username = getIntent().getStringExtra("user_username");
+        name = getIntent().getStringExtra("user_name");
     }
 
     public void createNewPalace(View view) {
         final EditText mPalaceTitle = findViewById(R.id.palaceCreationTitle);
         final EditText mPalaceDescription = findViewById(R.id.palaceDescription);
+        final View curView = view;
 
         Map<String, Object> json = new HashMap<>();
-        json.put("user_id", username);
+        json.put("user_username", username);
         json.put("palace_title", mPalaceTitle.getText().toString());
         json.put("palace_description", mPalaceDescription.getText().toString());
+        Log.d(TAG, json.toString());
 
         JSONObject jsonObject = new JSONObject(json);
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -52,6 +56,10 @@ public class CreatePalace extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         Log.d(TAG, response.toString());
+                        Intent intent = new Intent(curView.getContext(), MainMenu.class);
+                        intent.putExtra("user_username", username);
+                        intent.putExtra("user_name", name);
+                        startActivity(intent);
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -60,8 +68,6 @@ public class CreatePalace extends AppCompatActivity {
             }
         });
         queue.add(jsonRequest);
-        Intent intent = new Intent(this, MainMenu.class);
-        startActivity(intent);
     }
 
     public void goToHome(View view) {
