@@ -6,4 +6,5 @@
     <color name="colorButtonPrimary">#e8e8e8</color>
     <color name="NotRemembered">#e20003</color>
     <color name="Remembered">#00962a</color>
+    <color name="white">#ffffff</color>
 </resources>

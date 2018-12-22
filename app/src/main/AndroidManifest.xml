@@ -24,7 +24,6 @@
         </activity>
         <activity android:name=".IndoorLocation" />
         <activity android:name=".CreateNote" />
-        <activity android:name=".CreateUser" />
         <activity android:name=".CreatePalace" />
         <activity android:name=".ViewNote"/>
         <activity android:name=".ViewPalace"/>

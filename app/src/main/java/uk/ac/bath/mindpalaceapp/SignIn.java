@@ -34,7 +34,7 @@ public class SignIn extends AppCompatActivity {
     public void goToMainMenu(View view) {
         final EditText mUsername = findViewById(R.id.loginUsername);
         final EditText mPassword = findViewById(R.id.loginPassword);
-        String username = mUsername.getText().toString();
+        final String username = mUsername.getText().toString();
         final String password = mPassword.getText().toString();
         final View curView = view;
 
@@ -48,9 +48,15 @@ public class SignIn extends AppCompatActivity {
                         try {
                             JSONObject userJson = response.getJSONObject(0);
                             String realPass = userJson.get("user_password").toString();
+                            String name = userJson.get("user_name").toString();
                             if (realPass.equals(password)) {
                                 Intent intent = new Intent(curView.getContext(), MainMenu.class);
+                                intent.putExtra("user_username", username);
+                                intent.putExtra("user_name", name);
                                 startActivity(intent);
+                                Toast toast = Toast.makeText(getApplicationContext(),"Login successful.",
+                                        Toast.LENGTH_SHORT);
+                                toast.show();
                             }
                             else {
                                 Toast toast = Toast.makeText(getApplicationContext(),"Login failed.",
@@ -68,5 +74,10 @@ public class SignIn extends AppCompatActivity {
             }
         });
         queue.add(jsonRequest);
+    }
+
+    public void goToSignUp(View view) {
+        Intent intent = new Intent(this, SignUp.class);
+        startActivity(intent);
     }
 }

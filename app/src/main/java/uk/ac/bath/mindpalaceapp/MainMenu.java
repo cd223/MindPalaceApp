@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainMenu extends AppCompatActivity {
 
@@ -11,35 +12,12 @@ public class MainMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+        TextView welcomeMsg = findViewById(R.id.welcomeMsg);
+        welcomeMsg.setText("Hello, " + getIntent().getStringExtra("user_name").split(" ")[0]);
     }
 
-    public void goToIndoorLocation(View view) {
-        Intent intent = new Intent(this, IndoorLocation.class);
-        startActivity(intent);
-    }
-
-    public void goToCreatePalace(View view) {
-        Intent intent = new Intent(this, CreatePalace.class);
-        startActivity(intent);
-    }
-
-    public void goToCreateNote(View view) {
-        Intent intent = new Intent(this, CreateNote.class);
-        startActivity(intent);
-    }
-
-    public void goToCreateUser(View view) {
-        Intent intent = new Intent(this, CreateUser.class);
-        startActivity(intent);
-    }
-
-    public void goToViewNote(View view) {
-        Intent intent = new Intent(this, ViewNote.class);
-        startActivity(intent);
-    }
-
-    public void goToViewPalace(View view) {
-        Intent intent = new Intent(this, ViewPalace.class);
+    public void signOut(View view) {
+        Intent intent = new Intent(this, SignIn.class);
         startActivity(intent);
     }
 }

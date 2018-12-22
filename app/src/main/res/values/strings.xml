@@ -29,4 +29,7 @@
     <string name="signUpButton">Sign Up</string>
     <string name="username">Username</string>
     <string name="signInPassword">Password</string>
+    <string name="welcome">Hello,</string>
+    <string name="signOutButton">Sign Out</string>
+    <string name="name">Name</string>
 </resources>

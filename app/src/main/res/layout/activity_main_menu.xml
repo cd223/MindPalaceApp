@@ -18,53 +18,21 @@
         android:layout_marginBottom="2dp">
     </ImageView>
 
-    <Button
-        android:id="@+id/goToIndoorLocation"
-        android:layout_width="@dimen/btn_width"
+    <TextView
+        android:id="@+id/welcomeMsg"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:onClick="goToIndoorLocation"
-        android:text="@string/indoorLocationButton"
-        android:textAllCaps="false" />
+        android:layout_marginBottom="20dp"
+        android:text="@string/welcome"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
 
     <Button
-        android:id="@+id/goToCreatePalace"
+        android:id="@+id/signOut"
         android:layout_width="@dimen/btn_width"
         android:layout_height="wrap_content"
-        android:onClick="goToCreatePalace"
-        android:text="@string/PalaceCreationButton"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/goToCreateNote"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="wrap_content"
-        android:onClick="goToCreateNote"
-        android:text="@string/NoteCreationButton"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/goToCreateUser"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="wrap_content"
-        android:onClick="goToCreateUser"
-        android:text="@string/UserCreationButton"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/goToViewNote"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="wrap_content"
-        android:onClick="goToViewNote"
-        android:text="@string/ViewNoteButton"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/goToViewPalace"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="wrap_content"
-        android:onClick="goToViewPalace"
-        android:text="@string/ViewPalaceButton"
+        android:onClick="signOut"
+        android:text="@string/signOutButton"
         android:textAllCaps="false" />
 
 </LinearLayout>
