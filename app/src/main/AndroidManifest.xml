@@ -30,6 +30,8 @@
         <activity android:name=".MainMenu" />
         <activity android:name=".CreateMenu" />
         <activity android:name=".TrainMenu" />
+        <activity android:name=".TrackMenu" />
+        <activity android:name=".SettingsMenu"/>
         <activity android:name=".SignIn" />
         <activity android:name=".SignUp" />
     </application>

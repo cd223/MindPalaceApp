@@ -27,6 +27,54 @@
         android:textColor="@color/white"
         android:textSize="24sp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+            android:layout_width="222dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2dp"
+            android:background="@android:color/transparent"
+            android:onClick="goToCreateMenu"
+            app:srcCompat="@drawable/createwhite"></ImageView>
+
+        <ImageView
+            android:layout_width="94dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:background="@android:color/transparent"
+            android:onClick="goToTrainMenu"
+            app:srcCompat="@drawable/trainwhite"></ImageView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+            android:layout_width="222dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2dp"
+            android:background="@android:color/transparent"
+            android:onClick="goToTrackMenu"
+            app:srcCompat="@drawable/trackwhite"></ImageView>
+
+        <ImageView
+            android:layout_width="94dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:background="@android:color/transparent"
+            android:onClick="goToSettings"
+            app:srcCompat="@drawable/settingswhite"></ImageView>
+
+    </LinearLayout>
+
     <Button
         android:id="@+id/signOut"
         android:layout_width="@dimen/btn_width"
