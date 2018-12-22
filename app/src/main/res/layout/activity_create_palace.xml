@@ -37,7 +37,7 @@
                 android:background="@android:color/transparent"
                 android:cropToPadding="false"
                 android:onClick="goToHome"
-                app:srcCompat="@drawable/logo" />
+                app:srcCompat="@drawable/createpurple" />
 
             <TextView
                 android:id="@+id/textView"
@@ -57,19 +57,9 @@
                 android:inputType="textCapWords" />
 
             <EditText
-                android:id="@+id/user_id"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:ems="10"
-                android:hint="@string/UserId"
-                android:inputType="number" />
-
-            <EditText
                 android:id="@+id/palaceDescription"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="127dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:ems="10"

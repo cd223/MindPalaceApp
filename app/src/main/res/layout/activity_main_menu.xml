@@ -34,7 +34,7 @@
         android:layout_marginBottom="20dp">
 
         <ImageView
-            android:layout_width="222dp"
+            android:layout_width="194dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="2dp"
             android:background="@android:color/transparent"
@@ -58,7 +58,7 @@
         android:layout_marginBottom="20dp">
 
         <ImageView
-            android:layout_width="222dp"
+            android:layout_width="194dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="2dp"
             android:background="@android:color/transparent"

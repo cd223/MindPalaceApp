@@ -32,4 +32,7 @@
     <string name="welcome">Hello,</string>
     <string name="signOutButton">Sign Out</string>
     <string name="name">Name</string>
+    <string name="createmenu">Create Mode</string>
+    <string name="trainmenu">Train Mode</string>
+    <string name="train">Go!</string>
 </resources>

@@ -24,20 +24,24 @@ public class CreatePalace extends AppCompatActivity {
 
     private static final String url = "https://mindpalaceservice.herokuapp.com/newpalace";
     private static final String TAG = CreatePalace.class.getName();
+    private static String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.logo);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.activity_create_palace);
+        username = getIntent().getStringExtra("user_username");
     }
 
     public void createNewPalace(View view) {
         final EditText mPalaceTitle = findViewById(R.id.palaceCreationTitle);
         final EditText mPalaceDescription = findViewById(R.id.palaceDescription);
-        final EditText mPalaceUserId = findViewById(R.id.user_id);
 
         Map<String, Object> json = new HashMap<>();
-        json.put("user_id", mPalaceUserId.getText().toString());
+        json.put("user_id", username);
         json.put("palace_title", mPalaceTitle.getText().toString());
         json.put("palace_description", mPalaceDescription.getText().toString());
 
