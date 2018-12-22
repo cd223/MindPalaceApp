@@ -57,12 +57,12 @@ public class CreateNote extends AppCompatActivity {
             }
         });
         queue.add(jsonRequest);
-        Intent intent = new Intent(this, Home.class);
+        Intent intent = new Intent(this, MainMenu.class);
         startActivity(intent);
     }
 
     public void goToHome(View view) {
-        Intent intent = new Intent(this, Home.class);
+        Intent intent = new Intent(this, MainMenu.class);
         startActivity(intent);
     }
 }

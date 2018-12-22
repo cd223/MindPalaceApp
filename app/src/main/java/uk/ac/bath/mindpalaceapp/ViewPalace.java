@@ -12,16 +12,12 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class ViewPalace extends AppCompatActivity {
 
@@ -66,7 +62,7 @@ public class ViewPalace extends AppCompatActivity {
     }
 
     public void goToHome(View view) {
-        Intent intent = new Intent(this, Home.class);
+        Intent intent = new Intent(this, MainMenu.class);
         startActivity(intent);
     }
 }

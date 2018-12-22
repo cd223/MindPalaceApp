@@ -28,6 +28,10 @@
         <activity android:name=".CreatePalace" />
         <activity android:name=".ViewNote"/>
         <activity android:name=".ViewPalace"/>
-        <activity android:name=".Home" />
+        <activity android:name=".MainMenu" />
+        <activity android:name=".CreateMenu" />
+        <activity android:name=".TrainMenu" />
+        <activity android:name=".SignIn" />
+        <activity android:name=".SignUp" />
     </application>
 </manifest>
