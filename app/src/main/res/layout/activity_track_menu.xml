@@ -27,6 +27,21 @@
         android:background="@android:color/transparent"
         app:srcCompat="@drawable/trackwhite" />
 
+    <TextView
+        android:id="@+id/welcomeMsg2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="@string/choosepalace"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
+
+    <Spinner
+        android:id="@+id/palacechoice"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/colorAccent" />
+
     <Button
         android:id="@+id/signUp"
         android:layout_width="@dimen/btn_width"

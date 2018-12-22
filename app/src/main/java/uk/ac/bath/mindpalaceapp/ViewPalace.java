@@ -34,7 +34,6 @@ public class ViewPalace extends AppCompatActivity {
     public void viewPalace() {
         final EditText mPalaceTitle = findViewById(R.id.palaceTitle);
         final EditText mPalaceDescription = findViewById(R.id.palaceDescription);
-        final EditText mPalaceUserId = findViewById(R.id.user_id);
 
         RequestQueue queue = Volley.newRequestQueue(this);
         JsonRequest<JSONArray> jsonRequest = new JsonArrayRequest(Request.Method.GET, url, null,
@@ -46,7 +45,6 @@ public class ViewPalace extends AppCompatActivity {
                         try {
                             JSONObject noteJson = response.getJSONObject(0);
                             mPalaceTitle.setText(""+noteJson.get("palace_title"));
-                            mPalaceUserId.setText(""+noteJson.get("user_id"));
                             mPalaceDescription.setText(""+noteJson.get("palace_description"));
                         } catch (JSONException e) {
                             e.printStackTrace();
