@@ -1,12 +1,15 @@
 package uk.ac.bath.mindpalaceapp;
 
-import android.content.Intent;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -25,7 +28,6 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,7 +41,7 @@ public class ViewPalace extends AppCompatActivity {
     private static final String TAG = ViewPalace.class.getName();
     private static String palaceId;
     private static String palaceTitle;
-    private static final HashMap<String, String> noteTitleToId = new HashMap<>();
+    private static final HashMap<String, String[]> noteTitleToId = new HashMap<>();
     private final static String spaceReplacement = "%20";
 
     @Override
@@ -125,6 +127,7 @@ public class ViewPalace extends AppCompatActivity {
         final ListView lv = findViewById(R.id.unrememberedNotes);
         palaceTitle = palaceTitle.replace(" ", spaceReplacement);
         final List<String> note_titles = new ArrayList<String>();
+        final Context ctx = this;
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, note_titles);
 
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -137,12 +140,30 @@ public class ViewPalace extends AppCompatActivity {
                             for(int i=0; i<response.length(); i++) {
                                 JSONObject noteJson = response.getJSONObject(i);
                                 note_titles.add(noteJson.get("note_title").toString());
-                                noteTitleToId.put(noteJson.get("note_title").toString(), noteJson.get("note_id").toString());
+                                noteTitleToId.put(noteJson.get("note_title").toString(), new String[]{noteJson.get("note_id").toString(), noteJson.get("note_description").toString()});
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                         lv.setAdapter(arrayAdapter);
+                        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position,
+                                                    long id) {
+                                String noteTitle = parent.getAdapter().getItem(position).toString();
+                                AlertDialog.Builder dlgAlert = new AlertDialog.Builder(ctx);
+                                dlgAlert.setTitle(noteTitle);
+                                dlgAlert.setMessage(noteTitleToId.get(noteTitle)[1]);
+                                dlgAlert.setPositiveButton("Ok",
+                                        new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                dialog.dismiss();
+                                            }
+                                        });
+                                dlgAlert.setCancelable(true);
+                                dlgAlert.create().show();
+                            }
+                        });
                     }
                 }, new Response.ErrorListener() {
             @Override
