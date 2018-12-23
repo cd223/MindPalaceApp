@@ -23,6 +23,8 @@ public class CreateNote extends AppCompatActivity {
 
     private static final String url = "https://mindpalaceservice.herokuapp.com/newnote";
     private static final String TAG = CreateNote.class.getName();
+    private String username;
+    private String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,8 @@ public class CreateNote extends AppCompatActivity {
         getSupportActionBar().setLogo(R.drawable.logo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.activity_create_note);
+        username = getIntent().getStringExtra("user_username");
+        name = getIntent().getStringExtra("user_name");
     }
 
     public void createNewNote(View view) {
