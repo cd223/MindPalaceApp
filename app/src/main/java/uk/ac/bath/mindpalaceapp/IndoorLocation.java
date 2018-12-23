@@ -30,6 +30,8 @@ public class IndoorLocation extends AppCompatActivity {
     private CloudCredentials cloudCredentials = new EstimoteCloudCredentials(APP_ID, APP_TOKEN);
     private IndoorCloudManager cloudManager = new IndoorCloudManagerFactory().create(this, cloudCredentials);
     private ScanningIndoorLocationManager indoorLocationManager;
+    private String username;
+    private String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,8 @@ public class IndoorLocation extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.drawable.logo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
+        username = getIntent().getStringExtra("user_username");
+        name = getIntent().getStringExtra("user_name");
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ) {
             checkPermission();

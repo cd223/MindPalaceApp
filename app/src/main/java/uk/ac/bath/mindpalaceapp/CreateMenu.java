@@ -34,4 +34,11 @@ public class CreateMenu extends AppCompatActivity {
         intent.putExtra("user_name", name);
         startActivity(intent);
     }
+
+    public void goToIndoorLocation(View view) {
+        Intent intent = new Intent(this, IndoorLocation.class);
+        intent.putExtra("user_username", username);
+        intent.putExtra("user_name", name);
+        startActivity(intent);
+    }
 }
