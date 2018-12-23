@@ -29,6 +29,9 @@ public class CreateMenu extends AppCompatActivity {
     }
 
     public void goToCreateNote(View view) {
-
+        Intent intent = new Intent(this, CreateNote.class);
+        intent.putExtra("user_username", username);
+        intent.putExtra("user_name", name);
+        startActivity(intent);
     }
 }

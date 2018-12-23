@@ -1,6 +1,7 @@
 package uk.ac.bath.mindpalaceapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
@@ -79,5 +80,10 @@ public class TrainMenu extends AppCompatActivity {
     }
 
     public void goToViewNote(View view) {
+        final Spinner palaceChoice = findViewById(R.id.palacechoice);
+        final String palaceTitleToTrain = palaceChoice.getSelectedItem().toString();
+        Intent intent = new Intent(this, ViewNote.class);
+        intent.putExtra("palace_id", palaceTitleToId.get(palaceTitleToTrain));
+        startActivity(intent);
     }
 }

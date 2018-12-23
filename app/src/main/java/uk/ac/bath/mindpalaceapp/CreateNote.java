@@ -27,37 +27,38 @@ public class CreateNote extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.logo);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.activity_create_note);
     }
 
     public void createNewNote(View view) {
         final EditText mNoteTitle = findViewById(R.id.noteCreationTitle);
-        final EditText mNotePalaceId = findViewById(R.id.palace_id);
         final EditText mNoteDescription = findViewById(R.id.noteDescription);
-
-        Map<String, Object> json = new HashMap<>();
-        json.put("palace_id", mNotePalaceId.getText().toString());
-        json.put("note_title", mNoteTitle.getText().toString());
-        json.put("note_description", mNoteDescription.getText().toString());
-        json.put("note_location", "1,1");
-        json.put("note_status",true);
-
-        JSONObject jsonObject = new JSONObject(json);
-        RequestQueue queue = Volley.newRequestQueue(this);
-        JsonRequest<JSONObject> jsonRequest = new JsonObjectRequest(Request.Method.POST, url, jsonObject,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.d(TAG, response.toString());
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-            }
-        });
-        queue.add(jsonRequest);
-        Intent intent = new Intent(this, MainMenu.class);
-        startActivity(intent);
+//
+//        Map<String, Object> json = new HashMap<>();
+//        json.put("note_title", mNoteTitle.getText().toString());
+//        json.put("note_description", mNoteDescription.getText().toString());
+//        json.put("note_location", "1,1");
+//        json.put("note_status",true);
+//
+//        JSONObject jsonObject = new JSONObject(json);
+//        RequestQueue queue = Volley.newRequestQueue(this);
+//        JsonRequest<JSONObject> jsonRequest = new JsonObjectRequest(Request.Method.POST, url, jsonObject,
+//                new Response.Listener<JSONObject>() {
+//                    @Override
+//                    public void onResponse(JSONObject response) {
+//                        Log.d(TAG, response.toString());
+//                    }
+//                }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                error.printStackTrace();
+//            }
+//        });
+//        queue.add(jsonRequest);
+//        Intent intent = new Intent(this, MainMenu.class);
+//        startActivity(intent);
     }
 }
