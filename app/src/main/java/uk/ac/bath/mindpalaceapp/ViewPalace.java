@@ -21,13 +21,15 @@ import org.json.JSONObject;
 
 public class ViewPalace extends AppCompatActivity {
 
-    private static final String url = "https://mindpalaceservice.herokuapp.com/palace/1";
+    private static final String url = "https://mindpalaceservice.herokuapp.com/palace/";
     private static final String TAG = ViewPalace.class.getName();
+    private static String palaceId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_palace);
+        palaceId = getIntent().getStringExtra("palace_id");
         viewPalace();
     }
 
@@ -36,7 +38,7 @@ public class ViewPalace extends AppCompatActivity {
         final EditText mPalaceDescription = findViewById(R.id.palaceDescription);
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        JsonRequest<JSONArray> jsonRequest = new JsonArrayRequest(Request.Method.GET, url, null,
+        JsonRequest<JSONArray> jsonRequest = new JsonArrayRequest(Request.Method.GET, url + palaceId, null,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {

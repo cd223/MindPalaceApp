@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -56,6 +57,10 @@ public class CreatePalace extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         Log.d(TAG, response.toString());
+                        Toast toast = Toast.makeText(getApplicationContext(),
+                                "Palace '" + mPalaceTitle.getText().toString() + "' created.",
+                                Toast.LENGTH_SHORT);
+                        toast.show();
                         Intent intent = new Intent(curView.getContext(), MainMenu.class);
                         intent.putExtra("user_username", username);
                         intent.putExtra("user_name", name);

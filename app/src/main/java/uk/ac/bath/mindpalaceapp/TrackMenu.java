@@ -1,6 +1,7 @@
 package uk.ac.bath.mindpalaceapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -78,5 +79,11 @@ public class TrackMenu extends AppCompatActivity {
     }
 
     public void goToViewPalace(View view) {
+        final Spinner palaceChoice = findViewById(R.id.palacechoice);
+        String chosenPalaceTitle = palaceChoice.getSelectedItem().toString();
+        String chosenPalaceId = palaceTitleToId.get(chosenPalaceTitle);
+        Intent intent = new Intent(this, ViewPalace.class);
+        intent.putExtra("palace_id", chosenPalaceId);
+        startActivity(intent);
     }
 }
