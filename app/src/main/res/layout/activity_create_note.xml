@@ -36,7 +36,6 @@
                 android:adjustViewBounds="false"
                 android:background="@android:color/transparent"
                 android:cropToPadding="false"
-                android:onClick="goToHome"
                 app:srcCompat="@drawable/logo" />
 
             <TextView

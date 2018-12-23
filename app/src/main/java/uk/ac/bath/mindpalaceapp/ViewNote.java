@@ -64,9 +64,4 @@ public class ViewNote extends AppCompatActivity {
         });
         queue.add(jsonRequest);
     }
-
-    public void goToHome(View view) {
-        Intent intent = new Intent(this, MainMenu.class);
-        startActivity(intent);
-    }
 }

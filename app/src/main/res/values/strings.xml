@@ -40,4 +40,6 @@
     <string name="deletePalaceButton">Delete Palace</string>
     <string name="deleteAccountButton">Delete Account</string>
     <string name="choosepalace">Choose a Palace:</string>
+    <string name="unremembered_notes">Still to go:</string>
+    <string name="palace_progress">Progress</string>
 </resources>

@@ -37,8 +37,7 @@
                 android:adjustViewBounds="false"
                 android:background="@android:color/transparent"
                 android:cropToPadding="false"
-                android:onClick="goToHome"
-                app:srcCompat="@drawable/logo" />
+                app:srcCompat="@drawable/trackpurple" />
 
             <TextView
                 android:id="@+id/textView"
@@ -54,7 +53,6 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:ems="10"
-                android:enabled="false"
                 android:focusable="false"
                 android:hint="@string/viewPalaceTitle"
                 android:inputType="none" />
@@ -70,11 +68,32 @@
                 android:hint="@string/PalaceCreationDescription"
                 android:inputType="none" />
 
+            <TextView
+                android:id="@+id/progress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/palace_progress"
+                android:textSize="24sp" />
+
             <ProgressBar
-                android:id="@+id/progressBar2"
+                android:id="@+id/progressBar"
+                android:max="100"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:scaleY="8"
+                android:layout_height="45dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/unremembered_notes"
+                android:textSize="24sp" />
+
+            <ListView
+                android:id="@+id/unrememberedNotes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
         </LinearLayout>
     </ScrollView>
