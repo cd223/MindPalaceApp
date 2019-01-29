@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -93,7 +94,6 @@ public class ViewNote extends AppCompatActivity {
                         loc_x = locationPosition.getX();
                         loc_y = locationPosition.getY();
                         Log.d(TAG, "X: " + loc_x + " Y: " + loc_y);
-                        viewNote();
                     }
 
                     @Override
@@ -116,12 +116,11 @@ public class ViewNote extends AppCompatActivity {
         });
     }
 
-    public void viewNote() {
+    public void viewNote(View view) {
         final EditText mNoteTitle = findViewById(R.id.noteViewTitle);
         final EditText mNoteDescription = findViewById(R.id.noteDescription);
+        final TextView mNoteFound = findViewById(R.id.keepMovingOrFound);
         final String viewUrl = url + palaceId + "?xpos=" + loc_x + "&ypos=" + loc_y + "&rad=" + rad;
-        final Button rememberedButton = findViewById(R.id.rememberedButton);
-        final Button unrememberedButton = findViewById(R.id.unrememberedButton);
 
         RequestQueue queue = Volley.newRequestQueue(this);
         JsonRequest<JSONArray> jsonRequest = new JsonArrayRequest(Request.Method.GET, viewUrl, null,
@@ -132,15 +131,17 @@ public class ViewNote extends AppCompatActivity {
                         try {
                             JSONObject noteJson = response.getJSONObject(0);
                             if (noteJson.has("Message")) {
-                                mNoteTitle.setEnabled(false);
-                                mNoteDescription.setEnabled(false);
-                                rememberedButton.setClickable(false);
-                                unrememberedButton.setClickable(false);
+                                mNoteTitle.setText("");
+                                mNoteDescription.setText("");
                                 Toast toast = Toast.makeText(getApplicationContext(),
-                                        "No notes within the given radius. Please move closer to the loci.",
+                                        "No notes within radius for this palace. Please move closer to the loci.",
                                         Toast.LENGTH_SHORT);
                                 toast.show();
                             } else {
+                                Toast toast = Toast.makeText(getApplicationContext(),
+                                        "Note found!",
+                                        Toast.LENGTH_SHORT);
+                                toast.show();
                                 mNoteTitle.setText(""+noteJson.get("note_title"));
                                 mNoteDescription.setText(""+noteJson.get("note_description"));
                                 noteTitleToId.put(noteJson.get("note_title").toString(), noteJson.get("note_id").toString());

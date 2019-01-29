@@ -33,7 +33,7 @@
                 android:layout_height="236dp" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/keepMovingOrFound"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/note_details"
@@ -93,6 +93,15 @@
 
                     android:textAllCaps="false" />
             </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorButtonPrimary"
+                android:onClick="viewNote"
+                android:text="@string/CheckNotesButton"
+                android:textAllCaps="false" />
 
         </LinearLayout>
     </ScrollView>
