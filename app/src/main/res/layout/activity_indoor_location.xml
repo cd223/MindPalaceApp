@@ -17,7 +17,7 @@ android:background="@color/colorAccent">
     android:layout_marginRight="11dp">
 
     <LinearLayout
-        android:id="@+id/create_user"
+        android:id="@+id/indoor_location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"

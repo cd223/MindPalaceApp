@@ -29,10 +29,13 @@ public class ViewNote extends AppCompatActivity {
 
     private static final String url = "https://mindpalaceservice.herokuapp.com/nearestnote/";
     private static final String statusUrl = "https://mindpalaceservice.herokuapp.com/updatenotestatus/";
+
     private static String palaceId;
-    private float xpos = (float) 8.223345555555567;
-    private float ypos = (float) 1.45655555555566754;
-    private float rad = (float) 2.96666;
+
+    private double loc_x = 0.0;
+    private double loc_y = 0.0;
+    private double rad = 2.5;
+
     private final HashMap<String, String> noteTitleToId = new HashMap<>();
     private static final String TAG = ViewNote.class.getName();
 
@@ -50,7 +53,7 @@ public class ViewNote extends AppCompatActivity {
     public void viewNote() {
         final EditText mNoteTitle = findViewById(R.id.noteViewTitle);
         final EditText mNoteDescription = findViewById(R.id.noteDescription);
-        final String viewUrl = url + palaceId + "?xpos=" + xpos + "&ypos=" + ypos + "&rad=" + rad;
+        final String viewUrl = url + palaceId + "?xpos=" + loc_x + "&ypos=" + loc_y + "&rad=" + rad;
         final Button rememberedButton = findViewById(R.id.rememberedButton);
         final Button unrememberedButton = findViewById(R.id.unrememberedButton);
 

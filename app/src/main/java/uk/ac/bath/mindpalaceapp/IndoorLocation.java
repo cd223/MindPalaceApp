@@ -38,12 +38,12 @@ public class IndoorLocation extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_indoor_location);
         username = getIntent().getStringExtra("user_username");
         name = getIntent().getStringExtra("user_name");
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ) { checkPermission(); }
 
-        setContentView(R.layout.activity_indoor_location);
 
         IndoorCloudManager cloudManager = new IndoorCloudManagerFactory().create(this, cloudCredentials);
         cloudManager.getLocation(LOCATION_ID, new CloudCallback<Location>() {
@@ -57,8 +57,9 @@ public class IndoorLocation extends AppCompatActivity {
                 final IndoorLocationView indoorLocationView = findViewById(R.id.indoor_view);
 
                 indoorLocationManager = new IndoorLocationManagerBuilder(getApplicationContext(), location, cloudCredentials)
-                                .withDefaultScanner()
-                                .build();
+                            .withPositionUpdateInterval(501L)
+                            .withDefaultScanner()
+                            .build();
 
                 indoorLocationManager.setOnPositionUpdateListener(new OnPositionUpdateListener() {
                     @Override
