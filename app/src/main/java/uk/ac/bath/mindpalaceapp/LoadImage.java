@@ -20,6 +20,9 @@ public class LoadImage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.logo);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.activity_image_loader);
         username = getIntent().getStringExtra("user_username");
         name = getIntent().getStringExtra("user_name");

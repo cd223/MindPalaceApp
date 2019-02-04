@@ -28,14 +28,14 @@
             android:weightSum="1">
 
             <TextView
-                android:id="@+id/keepMovingOrFound"
+                android:id="@+id/NoteDetailsTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/NoteDetails"
                 android:textSize="24sp" />
 
             <EditText
-                android:id="@+id/noteViewTitle"
+                android:id="@+id/noteDetailsTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -46,7 +46,7 @@
                 android:inputType="none" />
 
             <EditText
-                android:id="@+id/noteDescription"
+                android:id="@+id/noteDetailsDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -58,7 +58,7 @@
 
 
             <ImageView
-                android:id="@+id/checkedImage"
+                android:id="@+id/noteImage"
                 android:layout_width="307dp"
                 android:layout_height="209dp"
                 android:layout_marginStart="15dp"
@@ -70,7 +70,6 @@
                 android:id="@+id/indoor_view_note_view"
                 android:layout_width="match_parent"
                 android:layout_height="236dp" />
-
 
         </LinearLayout>
     </ScrollView>

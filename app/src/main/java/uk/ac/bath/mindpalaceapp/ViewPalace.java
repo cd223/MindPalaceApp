@@ -143,7 +143,13 @@ public class ViewPalace extends AppCompatActivity {
                             for(int i=0; i<response.length(); i++) {
                                 JSONObject noteJson = response.getJSONObject(i);
                                 note_titles.add(noteJson.get("note_title").toString());
-                                noteTitleToNoteArray.put(noteJson.get("note_title").toString(), new String[]{noteJson.get("note_id").toString(), noteJson.get("note_description").toString(), noteJson.get("note_image_url").toString()});
+                                noteTitleToNoteArray.put(noteJson.get("note_title").toString(),
+                                        new String[]{noteJson.get("note_id").toString(),
+                                        noteJson.get("note_description").toString(),
+                                        noteJson.get("note_image_url").toString(),
+                                        noteJson.get("note_location_x").toString(),
+                                        noteJson.get("note_location_y").toString()
+                                });
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -158,6 +164,9 @@ public class ViewPalace extends AppCompatActivity {
                                 intent.putExtra("note_title", noteTitle);
                                 intent.putExtra("note_description", noteTitleToNoteArray.get(noteTitle)[1]);
                                 intent.putExtra("note_image_url", noteTitleToNoteArray.get(noteTitle)[2]);
+                                intent.putExtra("note_location_x", noteTitleToNoteArray.get(noteTitle)[3]);
+                                intent.putExtra("note_location_y", noteTitleToNoteArray.get(noteTitle)[4]);
+
                                 startActivity(intent);
                             }
                         });
