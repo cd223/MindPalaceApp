@@ -13,7 +13,6 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="0dp"
         android:layout_marginEnd="11dp"
         android:layout_marginRight="11dp">
 
@@ -28,75 +27,51 @@
             android:paddingBottom="@dimen/activity_vertical_margin"
             android:weightSum="1">
 
+            <TextView
+                android:id="@+id/keepMovingOrFound"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/NoteDetails"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/noteViewTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:hint="@string/CreateNoteTitle"
+                android:focusable="false"
+                android:inputType="none" />
+
+            <EditText
+                android:id="@+id/noteDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:hint="@string/NotesViewDescription"
+                android:focusable="false"
+                android:inputType="none" />
+
+
             <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="117dp"
-                android:layout_height="115dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="15dp"
+                android:id="@+id/checkedImage"
+                android:layout_width="307dp"
+                android:layout_height="209dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginBottom="15dp"
-                android:adjustViewBounds="false"
-                android:background="@android:color/transparent"
-                android:cropToPadding="false"
-                app:srcCompat="@drawable/trackpurple" />
+                android:layout_marginTop="15dp"
+                android:background="@android:color/transparent" />
 
-            <TextView
-                android:id="@+id/textView"
+            <com.estimote.indoorsdk_module.view.IndoorLocationView
+                android:id="@+id/indoor_view_note_view"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/palace_details"
-                android:textSize="24sp" />
+                android:layout_height="236dp" />
 
-            <EditText
-                android:id="@+id/palaceTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:ems="10"
-                android:focusable="false"
-                android:hint="@string/viewPalaceTitle"
-                android:inputType="none" />
-
-            <EditText
-                android:id="@+id/palaceDescription"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:ems="10"
-                android:focusable="false"
-                android:hint="@string/PalaceCreationDescription"
-                android:inputType="none" />
-
-            <TextView
-                android:id="@+id/progress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/palace_progress"
-                android:textSize="24sp" />
-
-            <ProgressBar
-                android:id="@+id/progressBar"
-                android:max="100"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
-                android:scaleY="8"
-                android:layout_height="45dp" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/unremembered_notes"
-                android:textSize="24sp" />
-
-            <ListView
-                android:id="@+id/unrememberedNotes"
-                android:layout_width="match_parent"
-                android:layout_height="289dp" />
 
         </LinearLayout>
     </ScrollView>
-
 </RelativeLayout>

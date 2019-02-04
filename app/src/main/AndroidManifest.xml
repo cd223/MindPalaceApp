@@ -40,5 +40,6 @@
         <activity android:name=".SignIn" />
         <activity android:name=".SignUp" />
         <activity android:name=".LoadImage" />
+        <activity android:name=".NoteDetails"/>
     </application>
 </manifest>

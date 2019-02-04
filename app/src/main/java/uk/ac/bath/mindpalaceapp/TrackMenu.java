@@ -85,6 +85,8 @@ public class TrackMenu extends AppCompatActivity {
         Intent intent = new Intent(this, ViewPalace.class);
         intent.putExtra("palace_id", chosenPalaceId);
         intent.putExtra("palace_title", chosenPalaceTitle);
+        intent.putExtra("user_username", username);
+        intent.putExtra("user_name", name);
         startActivity(intent);
     }
 }

@@ -1,11 +1,10 @@
 package uk.ac.bath.mindpalaceapp;
 
 import android.content.Context;
-import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -41,7 +40,9 @@ public class ViewPalace extends AppCompatActivity {
     private static final String TAG = ViewPalace.class.getName();
     private static String palaceId;
     private static String palaceTitle;
-    private static final HashMap<String, String[]> noteTitleToId = new HashMap<>();
+    private String username;
+    private String name;
+    private static final HashMap<String, String[]> noteTitleToNoteArray = new HashMap<>();
     private final static String spaceReplacement = "%20";
 
     @Override
@@ -53,6 +54,8 @@ public class ViewPalace extends AppCompatActivity {
         setContentView(R.layout.activity_view_palace);
         palaceId = getIntent().getStringExtra("palace_id");
         palaceTitle = getIntent().getStringExtra("palace_title");
+        username = getIntent().getStringExtra("user_username");
+        name = getIntent().getStringExtra("user_name");
         final ProgressBar progressBar = findViewById(R.id.progressBar);
         progressBar.getProgressDrawable().setColorFilter(
                 Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN);
@@ -95,7 +98,7 @@ public class ViewPalace extends AppCompatActivity {
         final Handler handler = new Handler();
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        JsonRequest<JSONObject> jsonRequest = new JsonObjectRequest(Request.Method.GET, progressUrl + palaceTitle, null,
+        JsonRequest<JSONObject> jsonRequest = new JsonObjectRequest(Request.Method.GET, progressUrl + palaceTitle  + "&user=" + username, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
@@ -131,7 +134,7 @@ public class ViewPalace extends AppCompatActivity {
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, note_titles);
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        JsonRequest<JSONArray> jsonRequest = new JsonArrayRequest(Request.Method.GET, unrememberedNotesUrl + palaceTitle, null,
+        JsonRequest<JSONArray> jsonRequest = new JsonArrayRequest(Request.Method.GET, unrememberedNotesUrl + palaceTitle  + "&user=" + username, null,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
@@ -140,7 +143,7 @@ public class ViewPalace extends AppCompatActivity {
                             for(int i=0; i<response.length(); i++) {
                                 JSONObject noteJson = response.getJSONObject(i);
                                 note_titles.add(noteJson.get("note_title").toString());
-                                noteTitleToId.put(noteJson.get("note_title").toString(), new String[]{noteJson.get("note_id").toString(), noteJson.get("note_description").toString()});
+                                noteTitleToNoteArray.put(noteJson.get("note_title").toString(), new String[]{noteJson.get("note_id").toString(), noteJson.get("note_description").toString(), noteJson.get("note_image_url").toString()});
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -151,17 +154,11 @@ public class ViewPalace extends AppCompatActivity {
                             public void onItemClick(AdapterView<?> parent, View view, int position,
                                                     long id) {
                                 String noteTitle = parent.getAdapter().getItem(position).toString();
-                                AlertDialog.Builder dlgAlert = new AlertDialog.Builder(ctx);
-                                dlgAlert.setTitle(noteTitle);
-                                dlgAlert.setMessage(noteTitleToId.get(noteTitle)[1]);
-                                dlgAlert.setPositiveButton("Ok",
-                                        new DialogInterface.OnClickListener() {
-                                            public void onClick(DialogInterface dialog, int which) {
-                                                dialog.dismiss();
-                                            }
-                                        });
-                                dlgAlert.setCancelable(true);
-                                dlgAlert.create().show();
+                                Intent intent = new Intent(ctx, NoteDetails.class);
+                                intent.putExtra("note_title", noteTitle);
+                                intent.putExtra("note_description", noteTitleToNoteArray.get(noteTitle)[1]);
+                                intent.putExtra("note_image_url", noteTitleToNoteArray.get(noteTitle)[2]);
+                                startActivity(intent);
                             }
                         });
                     }
