@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -159,6 +160,8 @@ public class CreateNote extends AppCompatActivity {
     public void createNewNote(View view) {
         final EditText mNoteTitle = findViewById(R.id.noteCreationTitle);
         final EditText mNoteDescription = findViewById(R.id.noteDescription);
+        final EditText mNoteImageUrl = findViewById(R.id.noteImageUrl);
+
         final Spinner palaceChoice = findViewById(R.id.palacechoice);
         String chosenPalaceTitle = palaceChoice.getSelectedItem().toString();
         String chosenPalaceId = palaceTitleToId.get(chosenPalaceTitle);
@@ -170,6 +173,7 @@ public class CreateNote extends AppCompatActivity {
         json.put("note_description", mNoteDescription.getText().toString());
         json.put("note_location_x", ""+loc_x);
         json.put("note_location_y", ""+loc_y);
+        json.put("note_image_url", mNoteImageUrl.getText().toString());
         json.put("note_status",false);
 
         JSONObject jsonObject = new JSONObject(json);
@@ -217,5 +221,16 @@ public class CreateNote extends AppCompatActivity {
                             Manifest.permission.WRITE_EXTERNAL_STORAGE},
                     123);
         }
+    }
+
+    public void checkImageLoads(View view) {
+        ImageView imageView = findViewById(R.id.checkedImage);
+        TextView textView = findViewById(R.id.noteImageUrl);
+        String url = textView.getText().toString();
+        ImageLoader.getLoader(getApplicationContext())
+                .load(url)
+                .fit()
+                .centerCrop()
+                .into(imageView);
     }
 }

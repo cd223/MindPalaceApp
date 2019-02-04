@@ -47,4 +47,5 @@
     <string name="loadImageURL">Image URL</string>
     <string name="LoadImage">Load Image</string>
     <string name="imageLoaderButton">Image Loader</string>
+    <string name="CheckImage">Check Image</string>
 </resources>

@@ -32,13 +32,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="236dp" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/new_note"
-                android:textSize="24sp" />
-
             <EditText
                 android:id="@+id/noteCreationTitle"
                 android:layout_width="match_parent"
@@ -74,6 +67,15 @@
                 android:hint="@string/NotesCreationDescription"
                 android:inputType="textCapWords" />
 
+            <EditText
+                android:id="@+id/noteImageUrl"
+                android:layout_width="match_parent"
+                android:layout_height="78dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:hint="@string/loadImageURL"/>
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -82,6 +84,24 @@
                 android:onClick="createNewNote"
                 android:text="@string/NoteCreationButton"
                 android:textAllCaps="false" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorButtonPrimary"
+                android:onClick="checkImageLoads"
+                android:text="@string/CheckImage"
+                android:textAllCaps="false" />
+
+            <ImageView
+                android:id="@+id/checkedImage"
+                android:layout_width="307dp"
+                android:layout_height="209dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/transparent" />
 
         </LinearLayout>
     </ScrollView>
