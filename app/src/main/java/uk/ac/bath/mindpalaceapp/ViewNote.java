@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -121,6 +122,7 @@ public class ViewNote extends AppCompatActivity {
         final EditText mNoteDescription = findViewById(R.id.noteDescription);
         final TextView mNoteFound = findViewById(R.id.keepMovingOrFound);
         final String viewUrl = url + palaceId + "?xpos=" + loc_x + "&ypos=" + loc_y + "&rad=" + rad;
+        final ImageView imageView = findViewById(R.id.checkedImage);
 
         RequestQueue queue = Volley.newRequestQueue(this);
         JsonRequest<JSONArray> jsonRequest = new JsonArrayRequest(Request.Method.GET, viewUrl, null,
@@ -144,6 +146,12 @@ public class ViewNote extends AppCompatActivity {
                                 toast.show();
                                 mNoteTitle.setText(""+noteJson.get("note_title"));
                                 mNoteDescription.setText(""+noteJson.get("note_description"));
+                                String imageUrl = noteJson.get("note_image_url").toString();
+                                ImageLoader.getLoader(getApplicationContext())
+                                        .load(imageUrl)
+                                        .fit()
+                                        .centerCrop()
+                                        .into(imageView);
                                 noteTitleToId.put(noteJson.get("note_title").toString(), noteJson.get("note_id").toString());
                             }
                         } catch (JSONException e) {
