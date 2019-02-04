@@ -41,4 +41,12 @@ public class CreateMenu extends AppCompatActivity {
         intent.putExtra("user_name", name);
         startActivity(intent);
     }
+
+    public void goToLoadImage(View view) {
+        Intent intent = new Intent(this, LoadImage.class);
+        intent.putExtra("user_username", username);
+        intent.putExtra("user_name", name);
+        startActivity(intent);
+    }
+
 }

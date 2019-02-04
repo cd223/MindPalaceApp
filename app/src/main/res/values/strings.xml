@@ -43,4 +43,8 @@
     <string name="unremembered_notes">Still to go:</string>
     <string name="palace_progress">Progress</string>
     <string name="CheckNotesButton">Check</string>
+    <string name="LoadImageButton">Load Image</string>
+    <string name="loadImageURL">Image URL</string>
+    <string name="LoadImage">Load Image</string>
+    <string name="imageLoaderButton">Image Loader</string>
 </resources>
