@@ -94,6 +94,7 @@
             <ListView
                 android:id="@+id/unrememberedNotes"
                 android:layout_width="match_parent"
+                android:nestedScrollingEnabled="true"
                 android:layout_height="289dp" />
 
         </LinearLayout>
