@@ -7,8 +7,8 @@ import android.view.View;
 
 public class CreateMenu extends AppCompatActivity {
 
-    private String username;
-    private String name;
+    public String username;
+    public String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
