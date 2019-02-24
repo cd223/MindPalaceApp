@@ -28,7 +28,7 @@
         app:srcCompat="@drawable/createwhite" />
 
     <Button
-        android:id="@+id/signIn"
+        android:id="@+id/new_palace"
         android:layout_width="@dimen/btn_width"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -37,7 +37,7 @@
         android:textAllCaps="false" />
 
     <Button
-        android:id="@+id/signUp"
+        android:id="@+id/new_note"
         android:layout_width="@dimen/btn_width"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"

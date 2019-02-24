@@ -34,6 +34,7 @@
         android:layout_marginBottom="20dp">
 
         <ImageView
+            android:id="@+id/create_menu"
             android:layout_width="194dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="2dp"
@@ -42,6 +43,7 @@
             app:srcCompat="@drawable/createwhite"></ImageView>
 
         <ImageView
+            android:id="@+id/train_menu"
             android:layout_width="94dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
@@ -58,6 +60,7 @@
         android:layout_marginBottom="20dp">
 
         <ImageView
+            android:id="@+id/track_menu"
             android:layout_width="194dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="2dp"
@@ -66,6 +69,7 @@
             app:srcCompat="@drawable/trackwhite"></ImageView>
 
         <ImageView
+            android:id="@+id/settings"
             android:layout_width="94dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"

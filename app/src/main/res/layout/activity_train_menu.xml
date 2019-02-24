@@ -44,7 +44,7 @@
         android:background="@color/colorAccent" />
 
     <Button
-        android:id="@+id/signUp"
+        android:id="@+id/train"
         android:layout_width="@dimen/btn_width"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
