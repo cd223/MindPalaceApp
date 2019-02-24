@@ -62,6 +62,8 @@ public class SignIn extends AppCompatActivity {
                                 Toast toast = Toast.makeText(getApplicationContext(),"Login failed.",
                                         Toast.LENGTH_SHORT);
                                 toast.show();
+                                mUsername.setText("");
+                                mPassword.setText("");
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
