@@ -50,4 +50,8 @@
     <string name="CheckImage">Check Image</string>
     <string name="NoteDetails">Note Details</string>
     <string name="login_fail">Login failed.</string>
+    <string name="createLabel">Create</string>
+    <string name="trainLabel">Train</string>
+    <string name="trackLabel">Track</string>
+    <string name="settingsLabel">Settings</string>
 </resources>
