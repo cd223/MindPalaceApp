@@ -1,67 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:weightSum="1">
+    android:background="@color/colorPrimary">
 
-    <ImageView
-        android:layout_width="123dp"
-        android:layout_height="116dp"
-        android:layout_marginBottom="15dp"
-        android:background="@android:color/transparent"
-        app:srcCompat="@drawable/signupwhite" />
-
-    <EditText
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="@string/name"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:ems="10"
-        android:id="@+id/signupName"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="5dp" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="11dp">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="@string/username"
-        android:ems="10"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:id="@+id/signupUsername"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="5dp" />
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginTop="100dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:weightSum="1">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:hint="@string/signInPassword"
-        android:ems="10"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:id="@+id/signupPassword"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="5dp" />
+            <ImageView
+                android:layout_width="123dp"
+                android:layout_height="116dp"
+                android:layout_marginBottom="15dp"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/signupwhite" />
 
-    <Button
-        android:id="@+id/signUp"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:onClick="signUp"
-        android:text="@string/signUpButton"
-        android:textAllCaps="false" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="@string/name"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:ems="10"
+                android:id="@+id/signupName"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp" />
 
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="@string/username"
+                android:ems="10"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:id="@+id/signupUsername"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp" />
 
-</LinearLayout>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="@string/signInPassword"
+                android:ems="10"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:id="@+id/signupPassword"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp" />
+
+            <Button
+                android:id="@+id/signUp"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:onClick="signUp"
+                android:text="@string/signUpButton"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>
