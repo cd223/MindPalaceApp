@@ -54,4 +54,13 @@
     <string name="trainLabel">Train</string>
     <string name="trackLabel">Track</string>
     <string name="settingsLabel">Settings</string>
+    <string name="launchBrowserButton">Choose Image</string>
+    <string name="SelectImage">Select Image</string>
+    <string name="imageUrl">Image URL</string>
+    <string name="chooseImage">Select Image</string>
+    <string name="goBack">←</string>
+    <string name="goBackButton">←</string>
+    <string name="goForwardButton">→</string>
+    <string name="reloadButton">↻</string>
+    <string name="viewChosenImage">View Chosen Image</string>
 </resources>

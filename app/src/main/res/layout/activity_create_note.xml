@@ -67,23 +67,14 @@
                 android:hint="@string/NotesCreationDescription"
                 android:inputType="text" />
 
-            <EditText
-                android:id="@+id/noteImageUrl"
-                android:layout_width="match_parent"
-                android:layout_height="78dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:ems="10"
-                android:hint="@string/loadImageURL"/>
-
             <Button
-                android:id="@+id/new_note"
+                android:id="@+id/launch_browser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@color/colorButtonPrimary"
-                android:onClick="createNewNote"
-                android:text="@string/NoteCreationButton"
+                android:onClick="goToSelectImage"
+                android:text="@string/launchBrowserButton"
                 android:textAllCaps="false" />
 
             <Button
@@ -93,7 +84,17 @@
                 android:layout_marginTop="10dp"
                 android:background="@color/colorButtonPrimary"
                 android:onClick="checkImageLoads"
-                android:text="@string/CheckImage"
+                android:text="@string/viewChosenImage"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/new_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorButtonPrimary"
+                android:onClick="createNewNote"
+                android:text="@string/NoteCreationButton"
                 android:textAllCaps="false" />
 
             <ImageView

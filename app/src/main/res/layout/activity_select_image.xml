@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp">
+
+        <LinearLayout
+            android:id="@+id/create_note"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:weightSum="1">
+
+            <WebView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/imagePicker"
+                android:layout_width="match_parent"
+                android:layout_height="465dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/goBackButton"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorButtonPrimary"
+                    android:textSize="30dp"
+                    android:text="@string/goBack"
+                    android:onClick="goBack"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/goForwardButton"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorButtonPrimary"
+                    android:textSize="30dp"
+                    android:text="@string/goForwardButton"
+                    android:onClick="goForward"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/reloadButton"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorButtonPrimary"
+                    android:textSize="30dp"
+                    android:text="@string/reloadButton"
+                    android:onClick="reload"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/chooseImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorButtonPrimary"
+                android:onClick="selectImage"
+                android:text="@string/chooseImage"
+                android:textAllCaps="false" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

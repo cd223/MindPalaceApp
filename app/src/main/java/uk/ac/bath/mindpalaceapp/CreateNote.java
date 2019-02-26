@@ -16,7 +16,6 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -58,6 +57,7 @@ public class CreateNote extends AppCompatActivity {
     private final String LOCATION_ID = "1w2101";
     private static final String TAG = CreateNote.class.getName();
     private final HashMap<String,String> palaceTitleToId = new HashMap<>();
+    private String noteImgUrl;
 
     private double loc_x = 0.0;
     private double loc_y = 0.0;
@@ -163,12 +163,19 @@ public class CreateNote extends AppCompatActivity {
     public void createNewNote(View view) {
         final EditText mNoteTitle = findViewById(R.id.noteCreationTitle);
         final EditText mNoteDescription = findViewById(R.id.noteDescription);
-        final EditText mNoteImageUrl = findViewById(R.id.noteImageUrl);
 
         final Spinner palaceChoice = findViewById(R.id.palacechoice);
         String chosenPalaceTitle = palaceChoice.getSelectedItem().toString();
         String chosenPalaceId = palaceTitleToId.get(chosenPalaceTitle);
         final View curView = view;
+
+        if(noteImgUrl == null || noteImgUrl.isEmpty()) {
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "Please select an image before continuing. Click 'Choose Image' to search.",
+                    Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }
 
         Map<String, Object> json = new HashMap<>();
         json.put("palace_id", chosenPalaceId);
@@ -176,7 +183,7 @@ public class CreateNote extends AppCompatActivity {
         json.put("note_description", mNoteDescription.getText().toString());
         json.put("note_location_x", ""+loc_x);
         json.put("note_location_y", ""+loc_y);
-        json.put("note_image_url", mNoteImageUrl.getText().toString());
+        json.put("note_image_url", noteImgUrl);
         json.put("note_status",false);
 
         JSONObject jsonObject = new JSONObject(json);
@@ -227,11 +234,17 @@ public class CreateNote extends AppCompatActivity {
     }
 
     public void checkImageLoads(View view) {
+        if(noteImgUrl == null || noteImgUrl.isEmpty()) {
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "Please select an image before continuing. Click 'Choose Image' to search.",
+                    Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }
+
         ImageView imageView = findViewById(R.id.checkedImage);
-        TextView textView = findViewById(R.id.noteImageUrl);
-        String url = textView.getText().toString();
         ImageLoader.getLoader(getApplicationContext())
-                .load(url)
+                .load(noteImgUrl)
                 .fit()
                 .centerCrop()
                 .into(imageView);
@@ -243,5 +256,23 @@ public class CreateNote extends AppCompatActivity {
             finish();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void goToSelectImage(View view) {
+        Intent intent = new Intent(this, SelectImage.class);
+        final EditText mNoteTitle = findViewById(R.id.noteCreationTitle);
+        String noteTitle = mNoteTitle.getText().toString();
+        intent.putExtra("note_title", noteTitle);
+        startActivityForResult(intent, 1);
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if(resultCode == RESULT_OK) {
+                String imageUrl = data.getStringExtra("note_image_url");
+                noteImgUrl = imageUrl;
+            }
+        }
     }
 }
