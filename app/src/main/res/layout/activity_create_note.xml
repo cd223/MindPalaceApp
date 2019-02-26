@@ -65,7 +65,7 @@
                 android:layout_marginBottom="5dp"
                 android:ems="10"
                 android:hint="@string/NotesCreationDescription"
-                android:inputType="textCapWords" />
+                android:inputType="text" />
 
             <EditText
                 android:id="@+id/noteImageUrl"
