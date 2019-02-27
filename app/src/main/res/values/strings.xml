@@ -42,7 +42,7 @@
     <string name="choosepalace">Choose a Palace:</string>
     <string name="unremembered_notes">Still to go:</string>
     <string name="palace_progress">Progress</string>
-    <string name="CheckNotesButton">Check For Note</string>
+    <string name="CheckNotesButton">Check For Note Here!</string>
     <string name="LoadImageButton">Load Image</string>
     <string name="loadImageURL">Image URL</string>
     <string name="LoadImage">Load Image</string>
@@ -65,7 +65,7 @@
     <string name="viewChosenImage">View Chosen Image</string>
     <string name="imageSelected">selectedImage</string>
     <string name="imgSelected">No Image Selected!</string>
-    <string name="note_details_lbl">Note Details:</string>
+    <string name="note_details_lbl">Move, wait, check!</string>
     <string name="noteDescriptionLbl"></string>
     <string name="NotesViewTitle">Title</string>
     <string name="NotesViewTitleLbl" />

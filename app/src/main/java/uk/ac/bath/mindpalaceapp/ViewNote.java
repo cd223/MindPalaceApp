@@ -134,6 +134,7 @@ public class ViewNote extends AppCompatActivity {
         final ImageView imageView = findViewById(R.id.checkedImage);
         final Button rememberedBtn = findViewById(R.id.rememberedButton);
         final Button unrememeredBtn = findViewById(R.id.unrememberedButton);
+        final TextView noteDetailsLbl = findViewById(R.id.noteDetailsLbl);
 
         RequestQueue queue = Volley.newRequestQueue(this);
         JsonRequest<JSONArray> jsonRequest = new JsonArrayRequest(Request.Method.GET, viewUrl, null,
@@ -149,6 +150,8 @@ public class ViewNote extends AppCompatActivity {
                                 rememberedBtn.setVisibility(View.GONE);
                                 unrememeredBtn.setVisibility(View.GONE);
                                 imageView.setImageDrawable(null);
+                                noteDetailsLbl.setText("No note found at this location.");
+                                noteDetailsLbl.setTextColor(getResources().getColor(R.color.red));
                                 Toast toast = Toast.makeText(getApplicationContext(),
                                         "No notes within radius for this palace. Please move closer to the loci.",
                                         Toast.LENGTH_SHORT);
@@ -160,6 +163,8 @@ public class ViewNote extends AppCompatActivity {
                                 toast.show();
                                 mNoteTitle.setText(""+noteJson.get("note_title"));
                                 mNoteDescription.setText(""+noteJson.get("note_description"));
+                                noteDetailsLbl.setText("Note details:");
+                                noteDetailsLbl.setTextColor(getResources().getColor(R.color.gray));
                                 String imageUrl = noteJson.get("note_image_url").toString();
                                 ImageLoader.getLoader(getApplicationContext())
                                         .load(imageUrl)
