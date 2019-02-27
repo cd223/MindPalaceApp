@@ -78,16 +78,6 @@
                 android:textSize="24sp" />
 
             <Button
-                android:id="@+id/checkImage"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorButtonPrimary"
-                android:onClick="checkImageLoads"
-                android:text="@string/viewChosenImage"
-                android:textAllCaps="false" />
-
-            <Button
                 android:id="@+id/launch_browser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

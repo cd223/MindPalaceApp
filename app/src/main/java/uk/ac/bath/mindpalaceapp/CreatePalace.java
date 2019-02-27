@@ -46,6 +46,14 @@ public class CreatePalace extends AppCompatActivity {
         final EditText mPalaceTitle = findViewById(R.id.palaceCreationTitle);
         final EditText mPalaceDescription = findViewById(R.id.palaceDescription);
         final View curView = view;
+        if(mPalaceTitle.getText() == null || mPalaceDescription.getText() == null
+           || mPalaceTitle.getText().toString().isEmpty() || mPalaceDescription.getText().toString().isEmpty()) {
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "Please enter a title and description before clicking 'Create Palace'.",
+                    Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }
 
         Map<String, Object> json = new HashMap<>();
         json.put("user_username", username);

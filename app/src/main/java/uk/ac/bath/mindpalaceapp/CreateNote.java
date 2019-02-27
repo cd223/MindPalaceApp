@@ -82,12 +82,7 @@ public class CreateNote extends AppCompatActivity {
         name = getIntent().getStringExtra("user_name");
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ) { checkPermission(); }
-
         populatePalaces();
-
-        Button checkImageBtn = findViewById(R.id.checkImage);
-        checkImageBtn.setVisibility(View.GONE);
-
         IndoorCloudManager cloudManager = new IndoorCloudManagerFactory().create(this, cloudCredentials);
         cloudManager.getLocation(LOCATION_ID, new CloudCallback<Location>() {
             @Override
@@ -176,6 +171,15 @@ public class CreateNote extends AppCompatActivity {
             return;
         }
 
+        if(mNoteTitle.getText() == null || mNoteDescription.getText() == null
+                || mNoteTitle.getText().toString().isEmpty() || mNoteDescription.getText().toString().isEmpty()) {
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "Please enter a title and description before clicking 'Create Palace'.",
+                    Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }
+
         Map<String, Object> json = new HashMap<>();
         json.put("palace_id", chosenPalaceId);
         json.put("note_title", mNoteTitle.getText().toString());
@@ -232,23 +236,6 @@ public class CreateNote extends AppCompatActivity {
         }
     }
 
-    public void checkImageLoads(View view) {
-        if(noteImgUrl == null || noteImgUrl.isEmpty()) {
-            Toast toast = Toast.makeText(getApplicationContext(),
-                    "Please select an image before continuing. Click 'Choose Image' to search.",
-                    Toast.LENGTH_SHORT);
-            toast.show();
-            return;
-        }
-
-        ImageView imageView = findViewById(R.id.checkedImage);
-        ImageLoader.getLoader(getApplicationContext())
-                .load(noteImgUrl)
-                .fit()
-                .centerCrop()
-                .into(imageView);
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
@@ -275,10 +262,13 @@ public class CreateNote extends AppCompatActivity {
                 imageSelected.setText("Image Selected");
                 imageSelected.setTextColor(getResources().getColor(R.color.green));
                 Button chooseImgBtn = findViewById(R.id.launch_browser);
-                Button checkImageBtn = findViewById(R.id.checkImage);
                 chooseImgBtn.setText("Choose Different Image");
-                checkImageBtn.setVisibility(View.VISIBLE);
-
+                ImageView imageView = findViewById(R.id.checkedImage);
+                ImageLoader.getLoader(getApplicationContext())
+                        .load(noteImgUrl)
+                        .fit()
+                        .centerCrop()
+                        .into(imageView);
             }
         }
     }
