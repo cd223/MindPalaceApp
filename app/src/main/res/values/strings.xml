@@ -71,4 +71,10 @@
     <string name="NotesViewTitleLbl" />
     <string name="deleteNote">Delete Note</string>
     <string name="palace_progress_counter">Remembered 0 of 0</string>
+    <string name="create_palace_info1">1. Enter a title and description for palace.</string>
+    <string name="create_palace_info2">2. Click \'Create Palace\'</string>
+    <string name="create_menu_info">Create palaces and add notes to them.</string>
+    <string name="train_menu_info">Retrieve notes of existing palaces. Practice makes perfect!</string>
+    <string name="track_menu_info">Check progress and see which notes are still to be remembered.</string>
+    <string name="settings_menu_info">Delete palaces or your account here.</string>
 </resources>

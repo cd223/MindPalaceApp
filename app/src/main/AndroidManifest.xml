@@ -40,5 +40,25 @@
         <activity android:name=".SignUp" />
         <activity android:name=".NoteDetails"/>
         <activity android:name=".SelectImage"/>
+        <activity android:name=".CreatePalaceInfo"
+            android:configChanges="orientation"
+            android:screenOrientation="sensor"
+            android:theme="@style/Theme.UserDialog"/>
+        <activity android:name=".CreateMenuInfo"
+            android:configChanges="orientation"
+            android:screenOrientation="sensor"
+            android:theme="@style/Theme.UserDialog"/>
+        <activity android:name=".TrainMenuInfo"
+            android:configChanges="orientation"
+            android:screenOrientation="sensor"
+            android:theme="@style/Theme.UserDialog"/>
+        <activity android:name=".TrackMenuInfo"
+            android:configChanges="orientation"
+            android:screenOrientation="sensor"
+            android:theme="@style/Theme.UserDialog"/>
+        <activity android:name=".SettingsMenuInfo"
+            android:configChanges="orientation"
+            android:screenOrientation="sensor"
+            android:theme="@style/Theme.UserDialog"/>
     </application>
 </manifest>
