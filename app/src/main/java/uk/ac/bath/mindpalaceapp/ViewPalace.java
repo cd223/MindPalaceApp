@@ -165,6 +165,7 @@ public class ViewPalace extends AppCompatActivity {
                                 String noteTitle = parent.getAdapter().getItem(position).toString();
                                 Intent intent = new Intent(ctx, NoteDetails.class);
                                 intent.putExtra("note_title", noteTitle);
+                                intent.putExtra("note_id", noteTitleToNoteArray.get(noteTitle)[0]);
                                 intent.putExtra("note_description", noteTitleToNoteArray.get(noteTitle)[1]);
                                 intent.putExtra("note_image_url", noteTitleToNoteArray.get(noteTitle)[2]);
                                 intent.putExtra("note_location_x", noteTitleToNoteArray.get(noteTitle)[3]);
@@ -189,5 +190,13 @@ public class ViewPalace extends AppCompatActivity {
             finish();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        viewPalaceDetails();
+        viewPalaceProgress();
+        viewUnrememberedNotes();
     }
 }

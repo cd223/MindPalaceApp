@@ -71,6 +71,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="236dp" />
 
+            <Button
+                android:id="@+id/deleteNote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:onClick="deleteNote"
+                android:text="@string/deleteNote"
+                android:textAllCaps="false" />
+
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

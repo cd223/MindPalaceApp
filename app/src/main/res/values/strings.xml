@@ -69,4 +69,5 @@
     <string name="noteDescriptionLbl"></string>
     <string name="NotesViewTitle">Title</string>
     <string name="NotesViewTitleLbl" />
+    <string name="deleteNote">Delete Note</string>
 </resources>
