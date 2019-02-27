@@ -33,6 +33,7 @@
                 android:layout_height="115dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="15dp"
+                android:layout_marginTop="20dp"
                 android:adjustViewBounds="false"
                 android:background="@android:color/transparent"
                 android:cropToPadding="false"
@@ -63,7 +64,7 @@
                 android:layout_marginBottom="5dp"
                 android:ems="10"
                 android:hint="@string/PalaceCreationDescription"
-                android:inputType="text" />
+                android:inputType="textCapSentences" />
 
             <Button
                 android:id="@id/new_palace"
