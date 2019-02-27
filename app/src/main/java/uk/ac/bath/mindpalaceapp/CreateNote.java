@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -83,6 +84,9 @@ public class CreateNote extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ) { checkPermission(); }
 
         populatePalaces();
+
+        Button checkImageBtn = findViewById(R.id.checkImage);
+        checkImageBtn.setVisibility(View.GONE);
 
         IndoorCloudManager cloudManager = new IndoorCloudManagerFactory().create(this, cloudCredentials);
         cloudManager.getLocation(LOCATION_ID, new CloudCallback<Location>() {
@@ -270,6 +274,11 @@ public class CreateNote extends AppCompatActivity {
                 TextView imageSelected = findViewById(R.id.imageSelected);
                 imageSelected.setText("Image Selected");
                 imageSelected.setTextColor(getResources().getColor(R.color.green));
+                Button chooseImgBtn = findViewById(R.id.launch_browser);
+                Button checkImageBtn = findViewById(R.id.checkImage);
+                chooseImgBtn.setText("Choose Different Image");
+                checkImageBtn.setVisibility(View.VISIBLE);
+
             }
         }
     }

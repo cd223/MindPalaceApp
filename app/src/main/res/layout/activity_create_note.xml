@@ -13,6 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:layout_marginTop="0dp"
         android:layout_marginEnd="11dp"
         android:layout_marginRight="11dp">
 
@@ -54,8 +55,8 @@
                 android:id="@+id/palacechoice"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
-                android:textStyle="bold"
-                android:background="@color/colorAccent" />
+                android:background="@color/colorAccent"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/noteDescription"
@@ -77,16 +78,6 @@
                 android:textSize="24sp" />
 
             <Button
-                android:id="@+id/launch_browser"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorButtonPrimary"
-                android:onClick="goToSelectImage"
-                android:text="@string/launchBrowserButton"
-                android:textAllCaps="false" />
-
-            <Button
                 android:id="@+id/checkImage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -94,6 +85,16 @@
                 android:background="@color/colorButtonPrimary"
                 android:onClick="checkImageLoads"
                 android:text="@string/viewChosenImage"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/launch_browser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorButtonPrimary"
+                android:onClick="goToSelectImage"
+                android:text="@string/launchBrowserButton"
                 android:textAllCaps="false" />
 
             <Button
@@ -111,8 +112,8 @@
                 android:layout_width="307dp"
                 android:layout_height="209dp"
                 android:layout_marginStart="15dp"
-                android:layout_marginBottom="15dp"
                 android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
                 android:background="@android:color/transparent" />
 
         </LinearLayout>

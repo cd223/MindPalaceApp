@@ -28,13 +28,10 @@ public class NoteDetails extends AppCompatActivity {
     private String note_description;
     private String note_location_x;
     private String note_location_y;
-
     private final String APP_ID = "mind-palace-eew";
     private final String APP_TOKEN = "3e6bcaf3b84c791b373a2bb439b3d239";
     private final String LOCATION_ID = "1w2101";
     private CloudCredentials cloudCredentials = new EstimoteCloudCredentials(APP_ID, APP_TOKEN);
-
-
     private static final String TAG = NoteDetails.class.getName();
 
     @Override
