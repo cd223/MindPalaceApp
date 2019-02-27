@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -202,6 +203,10 @@ public class ViewPalace extends AppCompatActivity {
         if (item.getItemId() == android.R.id.home) {
             finish();
         }
+        if (item.getItemId() == R.id.info_screen) {
+            Intent intent = new Intent(getApplicationContext(), ViewPalaceInfo.class);
+            startActivity(intent);
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -240,5 +245,11 @@ public class ViewPalace extends AppCompatActivity {
             }
         });
         queue.add(jsonRequest);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_info, menu);
+        return true;
     }
 }
