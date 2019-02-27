@@ -183,6 +183,11 @@ public class ViewNote extends AppCompatActivity {
 
     public void noteRemembered(View view) {
         final TextView noteTitleTv = findViewById(R.id.noteViewTitle);
+        final TextView mNoteDescription = findViewById(R.id.noteDescription);
+        final ImageView imageView = findViewById(R.id.checkedImage);
+        final Button rememberedBtn = findViewById(R.id.rememberedButton);
+        final Button unrememeredBtn = findViewById(R.id.unrememberedButton);
+        final TextView noteDetailsLbl = findViewById(R.id.noteDetailsLbl);
         final String noteTitle = noteTitleTv.getText().toString();
         String noteId = noteTitleToId.get(noteTitle);
         final String postUrl = statusUrl + noteId + "?status=true";
@@ -205,10 +210,22 @@ public class ViewNote extends AppCompatActivity {
             }
         });
         queue.add(jsonRequest);
+        noteTitleTv.setText("");
+        mNoteDescription.setText("");
+        rememberedBtn.setVisibility(View.GONE);
+        unrememeredBtn.setVisibility(View.GONE);
+        imageView.setImageDrawable(null);
+        noteDetailsLbl.setText(R.string.note_details_lbl);
+        noteDetailsLbl.setTextColor(getResources().getColor(R.color.gray));
     }
 
     public void noteNotRemembered(View view) {
         final TextView noteTitleTv = findViewById(R.id.noteViewTitle);
+        final TextView mNoteDescription = findViewById(R.id.noteDescription);
+        final ImageView imageView = findViewById(R.id.checkedImage);
+        final TextView noteDetailsLbl = findViewById(R.id.noteDetailsLbl);
+        final Button rememberedBtn = findViewById(R.id.rememberedButton);
+        final Button unrememeredBtn = findViewById(R.id.unrememberedButton);
         final String noteTitle = noteTitleTv.getText().toString();
         String noteId = noteTitleToId.get(noteTitle);
         final String postUrl = statusUrl + noteId + "?status=false";
@@ -231,6 +248,13 @@ public class ViewNote extends AppCompatActivity {
             }
         });
         queue.add(jsonRequest);
+        noteTitleTv.setText("");
+        mNoteDescription.setText("");
+        rememberedBtn.setVisibility(View.GONE);
+        unrememeredBtn.setVisibility(View.GONE);
+        imageView.setImageDrawable(null);
+        noteDetailsLbl.setText(R.string.note_details_lbl);
+        noteDetailsLbl.setTextColor(getResources().getColor(R.color.gray));
     }
 
     public void checkPermission(){

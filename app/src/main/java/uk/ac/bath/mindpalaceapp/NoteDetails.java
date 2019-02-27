@@ -154,9 +154,7 @@ public class NoteDetails extends AppCompatActivity {
     }
 
     @Override
-    public void onResume()
-    {  // After a pause OR at startup
+    public void onResume() {
         super.onResume();
-        //Refresh your stuff here
     }
 }

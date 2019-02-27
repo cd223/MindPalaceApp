@@ -48,6 +48,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/note_details_lbl"
                 android:layout_marginTop="10dp"
+                android:textColor="@color/gray"
                 android:textSize="24sp" />
 
             <TextView
