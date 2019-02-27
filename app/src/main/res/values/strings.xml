@@ -87,4 +87,8 @@
     <string name="select_image_info2">2. Click on image result then \'View File\' in bottom right.</string>
     <string name="select_image_info3">3. Double tap resulting image, then click \'Select Image\'.</string>
     <string name="create_note_info_msg">Move around, choose a location then create your note!</string>
+    <string name="view_note_info_msg">Move around, stop where you think a note is, then check!</string>
+    <string name="view_note_info1">1. Click \'Check For Note Here!\'</string>
+    <string name="view_note_info2">2. If a note is found, mark it as remembered (✔) or not (✖)!</string>
+    <string name="view_note_info3">3. If no note is found, move to another location and try again!</string>
 </resources>
