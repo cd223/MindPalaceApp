@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:nestedScrollingEnabled="true"
         android:layout_alignParentRight="true"
         android:layout_marginRight="11dp">
 
@@ -23,7 +24,8 @@
             android:background="@color/colorPrimary"
             android:gravity="center"
             android:orientation="vertical"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="50dp"
+            android:nestedScrollingEnabled="true"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:weightSum="1">
@@ -38,7 +40,7 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="text"
+                android:inputType="textCapWords"
                 android:hint="@string/name"
                 android:textColor="@color/white"
                 android:textSize="23dp"

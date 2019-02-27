@@ -135,6 +135,15 @@ public class SettingsMenu extends AppCompatActivity {
     public void deletePalace(View view) {
         final Context curCtx = view.getContext();
         final Spinner palaceChoice = findViewById(R.id.palacechoice);
+
+        if(palaceChoice.getSelectedItem() == null || palaceChoice.getSelectedItem().toString().isEmpty()) {
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "No palaces exist yet. Please create a palace before attempting to delete any.",
+                    Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }
+
         final String palaceTitleToDelete = palaceChoice.getSelectedItem().toString();
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

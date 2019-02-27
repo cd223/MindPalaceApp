@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.opengl.Visibility;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
@@ -54,7 +55,7 @@ public class ViewNote extends AppCompatActivity {
     private final String LOCATION_ID = "1w2101";
     private static final String TAG = ViewNote.class.getName();
     private static String palaceId;
-
+    private static final String notesByPalaceUrl = "https://mindpalaceservice.herokuapp.com/notesbypalace/";
     private double loc_x = 0.0;
     private double loc_y = 0.0;
     private double rad = 2.5;
@@ -72,7 +73,6 @@ public class ViewNote extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         setContentView(R.layout.activity_view_note);
-
         Button rememberedBtn = findViewById(R.id.rememberedButton);
         Button unrememeredBtn = findViewById(R.id.unrememberedButton);
 
@@ -80,6 +80,7 @@ public class ViewNote extends AppCompatActivity {
         unrememeredBtn.setVisibility(View.GONE);
 
         palaceId = getIntent().getStringExtra("palace_id");
+        checkNotesExist();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ) { checkPermission(); }
 
@@ -118,6 +119,36 @@ public class ViewNote extends AppCompatActivity {
                 toast.show();
             }
         });
+    }
+
+    private void checkNotesExist() {
+        final Context ctx = this;
+        final TextView noteDetailsLbl = findViewById(R.id.noteDetailsLbl);
+        final Button checkNoteBtn = findViewById(R.id.check_note);
+
+        RequestQueue queue = Volley.newRequestQueue(this);
+        JsonRequest<JSONArray> jsonRequest = new JsonArrayRequest(Request.Method.GET, notesByPalaceUrl + palaceId, null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        Log.d(TAG, response.toString());
+                        if (response.isNull(0)){
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "No notes exist for this palace. Please create notes in this palace before training.",
+                                    Toast.LENGTH_SHORT);
+                            toast.show();
+                            noteDetailsLbl.setText("No notes exist for this palace!");
+                            noteDetailsLbl.setTextColor(getResources().getColor(R.color.red));
+                            checkNoteBtn.setVisibility(View.GONE);
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+        queue.add(jsonRequest);
     }
 
     public void viewNote(View view) {

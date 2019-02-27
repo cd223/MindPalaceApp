@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -83,6 +84,15 @@ public class TrackMenu extends AppCompatActivity {
 
     public void goToViewPalace(View view) {
         final Spinner palaceChoice = findViewById(R.id.palacechoice);
+
+        if(palaceChoice.getSelectedItem() == null || palaceChoice.getSelectedItem().toString().isEmpty()) {
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "No palaces exist yet. Please create a palace and add notes before using Track mode.",
+                    Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }
+
         String chosenPalaceTitle = palaceChoice.getSelectedItem().toString();
         String chosenPalaceId = palaceTitleToId.get(chosenPalaceTitle);
         Intent intent = new Intent(this, ViewPalace.class);

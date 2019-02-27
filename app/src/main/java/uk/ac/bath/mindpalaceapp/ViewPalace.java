@@ -11,10 +11,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -39,6 +41,7 @@ public class ViewPalace extends AppCompatActivity {
     private static final String url = "https://mindpalaceservice.herokuapp.com/palace/";
     private static final String progressUrl = "https://mindpalaceservice.herokuapp.com/progress?ptitle=";
     private static final String unrememberedNotesUrl = "https://mindpalaceservice.herokuapp.com/unrememberednotes?ptitle=";
+    private static final String notesByPalaceUrl = "https://mindpalaceservice.herokuapp.com/notesbypalace/";
     private static final String TAG = ViewPalace.class.getName();
     private static String palaceId;
     private static String palaceTitle;
@@ -57,6 +60,8 @@ public class ViewPalace extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         setContentView(R.layout.activity_view_palace);
         palaceId = getIntent().getStringExtra("palace_id");
+        checkNotesExist();
+
         palaceTitle = getIntent().getStringExtra("palace_title");
         username = getIntent().getStringExtra("user_username");
         name = getIntent().getStringExtra("user_name");
@@ -198,8 +203,37 @@ public class ViewPalace extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
+        checkNotesExist();
         viewPalaceDetails();
         viewPalaceProgress();
         viewUnrememberedNotes();
+    }
+
+    private void checkNotesExist() {
+        final Context ctx = this;
+        final TextView stillToGoLbl = findViewById(R.id.stillToGo);
+
+        RequestQueue queue = Volley.newRequestQueue(this);
+        JsonRequest<JSONArray> jsonRequest = new JsonArrayRequest(Request.Method.GET, notesByPalaceUrl + palaceId, null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        Log.d(TAG, response.toString());
+                        if (response.isNull(0)){
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "No notes exist for this palace. Please create notes in this palace before tracking progress.",
+                                    Toast.LENGTH_SHORT);
+                            toast.show();
+                            stillToGoLbl.setText("No notes exist for this palace!");
+                            stillToGoLbl.setTextColor(getResources().getColor(R.color.red));
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+        queue.add(jsonRequest);
     }
 }

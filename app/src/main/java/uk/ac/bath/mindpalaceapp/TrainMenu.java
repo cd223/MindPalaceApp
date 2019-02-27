@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -84,6 +85,14 @@ public class TrainMenu extends AppCompatActivity {
 
     public void goToViewNote(View view) {
         final Spinner palaceChoice = findViewById(R.id.palacechoice);
+        if(palaceChoice.getSelectedItem() == null || palaceChoice.getSelectedItem().toString().isEmpty()) {
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "No palaces exist yet. Please create a palace and add notes before using Train mode.",
+                    Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }
+
         final String palaceTitleToTrain = palaceChoice.getSelectedItem().toString();
         Intent intent = new Intent(this, ViewNote.class);
         intent.putExtra("palace_id", palaceTitleToId.get(palaceTitleToTrain));

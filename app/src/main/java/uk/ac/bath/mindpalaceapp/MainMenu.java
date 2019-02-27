@@ -19,7 +19,7 @@ public class MainMenu extends AppCompatActivity {
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.activity_main_menu);
         TextView welcomeMsg = findViewById(R.id.welcomeMsg);
-        name = getIntent().getStringExtra("user_name");
+        name = getIntent().getStringExtra("user_name").split(" ")[0];
         username = getIntent().getStringExtra("user_username");
         welcomeMsg.setText("Hello, " + name);
     }
