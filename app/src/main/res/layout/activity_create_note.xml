@@ -67,6 +67,15 @@
                 android:hint="@string/NotesCreationDescription"
                 android:inputType="text" />
 
+            <TextView
+                android:id="@+id/imageSelected"
+                android:layout_width="331dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="@string/imgSelected"
+                android:textColor="@color/red"
+                android:textSize="24sp" />
+
             <Button
                 android:id="@+id/launch_browser"
                 android:layout_width="match_parent"

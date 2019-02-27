@@ -16,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -272,6 +273,9 @@ public class CreateNote extends AppCompatActivity {
             if(resultCode == RESULT_OK) {
                 String imageUrl = data.getStringExtra("note_image_url");
                 noteImgUrl = imageUrl;
+                TextView imageSelected = findViewById(R.id.imageSelected);
+                imageSelected.setText("Image Selected");
+                imageSelected.setTextColor(getResources().getColor(R.color.green));
             }
         }
     }

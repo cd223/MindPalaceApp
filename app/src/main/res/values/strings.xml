@@ -63,4 +63,6 @@
     <string name="goForwardButton">→</string>
     <string name="reloadButton">↻</string>
     <string name="viewChosenImage">View Chosen Image</string>
+    <string name="imageSelected">selectedImage</string>
+    <string name="imgSelected">No Image Selected!</string>
 </resources>
