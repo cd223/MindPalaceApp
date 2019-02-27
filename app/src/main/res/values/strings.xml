@@ -77,4 +77,8 @@
     <string name="train_menu_info">Retrieve notes of existing palaces. Practice makes perfect!</string>
     <string name="track_menu_info">Check progress and see which notes are still to be remembered.</string>
     <string name="settings_menu_info">Delete palaces or your account here.</string>
+    <string name="create_note_info1">1. Enter a title and description for note.</string>
+    <string name="create_note_info2">2. Choose palace note belongs to.</string>
+    <string name="create_note_info3">3. Click \'Choose Image\' and select image.</string>
+    <string name="create_note_info4">4. Click \'Create Note\' when happy!</string>
 </resources>
