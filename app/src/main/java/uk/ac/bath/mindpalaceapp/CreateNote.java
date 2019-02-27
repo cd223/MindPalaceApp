@@ -10,6 +10,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -241,6 +242,12 @@ public class CreateNote extends AppCompatActivity {
         if (item.getItemId() == android.R.id.home) {
             finish();
         }
+        if (item.getItemId() == R.id.info_screen) {
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "Tell me more.",
+                    Toast.LENGTH_SHORT);
+            toast.show();
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -271,5 +278,11 @@ public class CreateNote extends AppCompatActivity {
                         .into(imageView);
             }
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_info, menu);
+        return true;
     }
 }

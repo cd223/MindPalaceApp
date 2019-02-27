@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
@@ -87,6 +88,12 @@ public class SelectImage extends AppCompatActivity {
         if (item.getItemId() == android.R.id.home) {
             finish();
         }
+        if (item.getItemId() == R.id.info_screen) {
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "Tell me more.",
+                    Toast.LENGTH_SHORT);
+            toast.show();
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -107,5 +114,11 @@ public class SelectImage extends AppCompatActivity {
         intent.putExtra("note_image_url", browser.getUrl());
         setResult(RESULT_OK, intent);
         finish();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_info, menu);
+        return true;
     }
 }
