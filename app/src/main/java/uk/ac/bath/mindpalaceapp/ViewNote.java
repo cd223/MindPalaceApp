@@ -72,6 +72,13 @@ public class ViewNote extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         setContentView(R.layout.activity_view_note);
+
+        Button rememberedBtn = findViewById(R.id.rememberedButton);
+        Button unrememeredBtn = findViewById(R.id.unrememberedButton);
+
+        rememberedBtn.setVisibility(View.GONE);
+        unrememeredBtn.setVisibility(View.GONE);
+
         palaceId = getIntent().getStringExtra("palace_id");
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ) { checkPermission(); }
@@ -125,6 +132,8 @@ public class ViewNote extends AppCompatActivity {
         final TextView mNoteDescription = findViewById(R.id.noteDescription);
         final String viewUrl = url + palaceId + "?xpos=" + loc_x + "&ypos=" + loc_y + "&rad=" + rad;
         final ImageView imageView = findViewById(R.id.checkedImage);
+        final Button rememberedBtn = findViewById(R.id.rememberedButton);
+        final Button unrememeredBtn = findViewById(R.id.unrememberedButton);
 
         RequestQueue queue = Volley.newRequestQueue(this);
         JsonRequest<JSONArray> jsonRequest = new JsonArrayRequest(Request.Method.GET, viewUrl, null,
@@ -137,6 +146,9 @@ public class ViewNote extends AppCompatActivity {
                             if (noteJson.has("Message")) {
                                 mNoteTitle.setText("");
                                 mNoteDescription.setText("");
+                                rememberedBtn.setVisibility(View.GONE);
+                                unrememeredBtn.setVisibility(View.GONE);
+                                imageView.setImageDrawable(null);
                                 Toast toast = Toast.makeText(getApplicationContext(),
                                         "No notes within radius for this palace. Please move closer to the loci.",
                                         Toast.LENGTH_SHORT);
@@ -155,6 +167,8 @@ public class ViewNote extends AppCompatActivity {
                                         .centerCrop()
                                         .into(imageView);
                                 noteTitleToId.put(noteJson.get("note_title").toString(), noteJson.get("note_id").toString());
+                                rememberedBtn.setVisibility(View.VISIBLE);
+                                unrememeredBtn.setVisibility(View.VISIBLE);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
