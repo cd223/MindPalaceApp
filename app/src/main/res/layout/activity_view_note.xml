@@ -32,45 +32,54 @@
                 android:layout_width="match_parent"
                 android:layout_height="236dp" />
 
-            <TextView
-                android:id="@+id/keepMovingOrFound"
+            <Button
+                android:id="@+id/check_note"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/note_details"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorButtonPrimary"
+                android:onClick="viewNote"
+                android:text="@string/CheckNotesButton"
+                android:textAllCaps="false" />
+
+            <TextView
+                android:id="@+id/noteDetailsLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/note_details_lbl"
+                android:layout_marginTop="10dp"
                 android:textSize="24sp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/noteViewTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:ems="10"
-                android:hint="@string/CreateNoteTitle"
+                android:text="@string/NotesViewTitleLbl"
+                android:hint="@string/NotesViewTitle"
+                android:layout_marginTop="10dp"
                 android:focusable="false"
-                android:inputType="none" />
+                android:textSize="20sp"
+                android:inputType="none"/>
 
-            <EditText
+            <TextView
                 android:id="@+id/noteDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:ems="10"
+                android:text="@string/noteDescriptionLbl"
                 android:hint="@string/NotesViewDescription"
+                android:layout_marginTop="10dp"
                 android:focusable="false"
-                android:inputType="none" />
-
+                android:textSize="20sp"
+                android:inputType="none"/>
 
             <ImageView
                 android:id="@+id/checkedImage"
-                android:layout_width="307dp"
-                android:layout_height="209dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginBottom="15dp"
+                android:layout_width="258dp"
+                android:layout_height="139dp"
+                android:layout_marginLeft="55dp"
                 android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
                 android:background="@android:color/transparent" />
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -81,7 +90,7 @@
                     android:id="@+id/rememberedButton"
                     android:layout_width="132dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="40dp"
                     android:layout_marginTop="10dp"
                     android:background="@color/colorButtonPrimary"
                     android:textSize="30dp"
@@ -104,16 +113,6 @@
 
                     android:textAllCaps="false" />
             </LinearLayout>
-
-            <Button
-                android:id="@+id/check_note"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorButtonPrimary"
-                android:onClick="viewNote"
-                android:text="@string/CheckNotesButton"
-                android:textAllCaps="false" />
 
         </LinearLayout>
     </ScrollView>

@@ -121,9 +121,8 @@ public class ViewNote extends AppCompatActivity {
     }
 
     public void viewNote(View view) {
-        final EditText mNoteTitle = findViewById(R.id.noteViewTitle);
-        final EditText mNoteDescription = findViewById(R.id.noteDescription);
-        final TextView mNoteFound = findViewById(R.id.keepMovingOrFound);
+        final TextView mNoteTitle = findViewById(R.id.noteViewTitle);
+        final TextView mNoteDescription = findViewById(R.id.noteDescription);
         final String viewUrl = url + palaceId + "?xpos=" + loc_x + "&ypos=" + loc_y + "&rad=" + rad;
         final ImageView imageView = findViewById(R.id.checkedImage);
 
@@ -171,7 +170,7 @@ public class ViewNote extends AppCompatActivity {
     }
 
     public void noteRemembered(View view) {
-        final EditText noteTitleTv = findViewById(R.id.noteViewTitle);
+        final TextView noteTitleTv = findViewById(R.id.noteViewTitle);
         final String noteTitle = noteTitleTv.getText().toString();
         String noteId = noteTitleToId.get(noteTitle);
         final String postUrl = statusUrl + noteId + "?status=true";
@@ -197,7 +196,7 @@ public class ViewNote extends AppCompatActivity {
     }
 
     public void noteNotRemembered(View view) {
-        final EditText noteTitleTv = findViewById(R.id.noteViewTitle);
+        final TextView noteTitleTv = findViewById(R.id.noteViewTitle);
         final String noteTitle = noteTitleTv.getText().toString();
         String noteId = noteTitleToId.get(noteTitle);
         final String postUrl = statusUrl + noteId + "?status=false";
