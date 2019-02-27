@@ -89,7 +89,7 @@ public class NoteDetails extends AppCompatActivity {
             @Override
             public void failure(EstimoteCloudException e) {
                 Toast toast = Toast.makeText(getApplicationContext(),
-                        "ERROR: Failed to get location from Estimote Cloud.",
+                        "Error: Failed to retrieve location for palace.",
                         Toast.LENGTH_SHORT);
                 toast.show();
             }

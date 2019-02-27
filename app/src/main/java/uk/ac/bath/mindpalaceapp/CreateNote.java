@@ -88,17 +88,11 @@ public class CreateNote extends AppCompatActivity {
         cloudManager.getLocation(LOCATION_ID, new CloudCallback<Location>() {
             @Override
             public void success(Location location) {
-                Toast toast = Toast.makeText(getApplicationContext(), "Location '" + location.getName() + "' loaded from Estimote Cloud.",
-                        Toast.LENGTH_SHORT);
-                toast.show();
-
                 final IndoorLocationView indoorLocationView = findViewById(R.id.indoor_view_note_creation);
-
                 indoorLocationManager = new IndoorLocationManagerBuilder(getApplicationContext(), location, cloudCredentials)
                         .withPositionUpdateInterval(501L)
                         .withDefaultScanner()
                         .build();
-
                 indoorLocationManager.setOnPositionUpdateListener(new OnPositionUpdateListener() {
                     @Override
                     public void onPositionUpdate(LocationPosition locationPosition) {
@@ -121,7 +115,7 @@ public class CreateNote extends AppCompatActivity {
             @Override
             public void failure(EstimoteCloudException e) {
                 Toast toast = Toast.makeText(getApplicationContext(),
-                        "ERROR: Failed to get location from Estimote Cloud.",
+                        "Error: Failed to retrieve location for palace.",
                         Toast.LENGTH_SHORT);
                 toast.show();
             }
