@@ -9,6 +9,16 @@
     android:background="@color/colorPrimaryDark">
 
     <TextView
+        android:id="@+id/create_note_info_msg"
+        android:layout_width="fill_parent"
+        android:layout_height="106dp"
+        android:layout_marginTop="5dp"
+        android:inputType="textMultiLine"
+        android:text="@string/create_note_info_msg"
+        android:textColor="@color/white"
+        android:textSize="25dp" />
+
+    <TextView
         android:id="@+id/create_note_info1"
         android:layout_width="fill_parent"
         android:layout_height="65dp"
@@ -16,7 +26,7 @@
         android:inputType="textMultiLine"
         android:text="@string/create_note_info1"
         android:textColor="@color/white"
-        android:textSize="25dp" />
+        android:textSize="22dp" />
 
     <TextView
         android:id="@+id/create_note_info2"
@@ -26,7 +36,7 @@
         android:inputType="textMultiLine"
         android:text="@string/create_note_info2"
         android:textColor="@color/white"
-        android:textSize="25dp" />
+        android:textSize="22dp" />
 
     <TextView
         android:id="@+id/create_note_info3"
@@ -36,7 +46,7 @@
         android:inputType="textMultiLine"
         android:text="@string/create_note_info3"
         android:textColor="@color/white"
-        android:textSize="25dp" />
+        android:textSize="22dp" />
 
     <TextView
         android:id="@+id/create_note_info4"
@@ -46,6 +56,6 @@
         android:inputType="textMultiLine"
         android:text="@string/create_note_info4"
         android:textColor="@color/white"
-        android:textSize="25dp" />
+        android:textSize="22dp" />
 
 </LinearLayout>

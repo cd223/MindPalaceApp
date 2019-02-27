@@ -81,4 +81,10 @@
     <string name="create_note_info2">2. Choose palace note belongs to.</string>
     <string name="create_note_info3">3. Click \'Choose Image\' and select image.</string>
     <string name="create_note_info4">4. Click \'Create Note\' when happy!</string>
+    <string name="signup_info1">1. Enter name and a suitable username and password. Password not encrypted so make sure it\'s not important!</string>
+    <string name="signup_info2">2. Click \'Sign Up\'</string>
+    <string name="select_image_info1">1. Search for suitable image on DuchDuckGo Images.</string>
+    <string name="select_image_info2">2. Click on image result then \'View File\' in bottom right.</string>
+    <string name="select_image_info3">3. Double tap resulting image, then click \'Select Image\'.</string>
+    <string name="create_note_info_msg">Move around, choose a location then create your note!</string>
 </resources>

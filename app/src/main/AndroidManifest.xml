@@ -64,5 +64,13 @@
             android:configChanges="orientation"
             android:screenOrientation="sensor"
             android:theme="@style/Theme.UserDialog"/>
+        <activity android:name=".SignUpInfo"
+            android:configChanges="orientation"
+            android:screenOrientation="sensor"
+            android:theme="@style/Theme.UserDialog"/>
+        <activity android:name=".SelectImageInfo"
+            android:configChanges="orientation"
+            android:screenOrientation="sensor"
+            android:theme="@style/Theme.UserDialog"/>
     </application>
 </manifest>

@@ -89,10 +89,8 @@ public class SelectImage extends AppCompatActivity {
             finish();
         }
         if (item.getItemId() == R.id.info_screen) {
-            Toast toast = Toast.makeText(getApplicationContext(),
-                    "Tell me more.",
-                    Toast.LENGTH_SHORT);
-            toast.show();
+            Intent intent = new Intent(getApplicationContext(), SelectImageInfo.class);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
