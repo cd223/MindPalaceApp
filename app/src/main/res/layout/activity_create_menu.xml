@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:text="@string/createmenu"
+        android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="35sp" />
 
@@ -32,6 +33,7 @@
         android:layout_width="@dimen/btn_width"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:textSize="25dp"
         android:onClick="goToCreatePalace"
         android:text="@string/new_palace"
         android:textAllCaps="false" />
@@ -41,6 +43,7 @@
         android:layout_width="@dimen/btn_width"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:textSize="25dp"
         android:onClick="goToCreateNote"
         android:text="@string/new_note"
         android:textAllCaps="false" />

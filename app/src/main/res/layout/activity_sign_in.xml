@@ -27,6 +27,7 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:ems="10"
+        android:textSize="23dp"
         android:id="@+id/loginUsername"
         android:layout_marginBottom="5dp"
         android:layout_marginTop="5dp" />
@@ -38,6 +39,7 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:hint="@string/signInPassword"
+        android:textSize="23dp"
         android:ems="10"
         android:id="@+id/loginPassword"
         android:layout_marginBottom="5dp"
@@ -49,7 +51,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:onClick="goToMainMenu"
+        android:textSize="25dp"
         android:text="@string/signInButton"
+        android:textStyle="bold"
         android:textAllCaps="false" />
 
     <Button
@@ -57,6 +61,7 @@
         android:layout_width="@dimen/btn_width"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:textSize="25dp"
         android:onClick="goToSignUp"
         android:text="@string/signUpButton"
         android:textAllCaps="false" />

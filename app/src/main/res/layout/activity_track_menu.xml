@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:text="@string/trackmenu"
+        android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="35sp" />
 
@@ -32,14 +33,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
+        android:textSize="25dp"
         android:text="@string/choosepalace"
-        android:textColor="@color/white"
-        android:textSize="24sp" />
+        android:textColor="@color/white" />
 
     <Spinner
         android:id="@+id/palacechoice"
         android:layout_width="match_parent"
         android:layout_height="44dp"
+        android:textSize="25dp"
         android:background="@color/colorAccent" />
 
     <Button
@@ -48,6 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:onClick="goToViewPalace"
+        android:textSize="25dp"
         android:text="@string/train"
         android:textAllCaps="false" />
 

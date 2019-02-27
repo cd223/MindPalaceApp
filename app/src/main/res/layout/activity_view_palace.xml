@@ -76,6 +76,13 @@
                 android:text="@string/palace_progress"
                 android:textSize="24sp" />
 
+            <TextView
+                android:id="@+id/counter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/palace_progress_counter"
+                android:textSize="20sp" />
+
             <ProgressBar
                 android:id="@+id/progressBar"
                 android:max="100"

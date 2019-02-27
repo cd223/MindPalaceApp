@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:text="@string/settingsmenu"
+        android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="35sp" />
 
@@ -34,7 +35,7 @@
         android:layout_marginBottom="20dp"
         android:text="@string/choosepalace"
         android:textColor="@color/white"
-        android:textSize="24sp" />
+        android:textSize="25dp" />
 
     <Spinner
         android:id="@+id/palacechoice"
@@ -48,6 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="@string/deletePalaceButton"
+        android:textSize="25dp"
         android:onClick="deletePalace"
         android:textAllCaps="false" />
 
@@ -57,6 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="@string/deleteAccountButton"
+        android:textSize="25dp"
         android:onClick="deleteAccount"
         android:textAllCaps="false" />
 

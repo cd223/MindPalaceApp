@@ -28,6 +28,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -99,6 +100,7 @@ public class ViewPalace extends AppCompatActivity {
         final TextView progressMsg = findViewById(R.id.progress);
         palaceTitle = palaceTitle.replace(" ", spaceReplacement);
         final Handler handler = new Handler();
+        final TextView progressCounter = findViewById(R.id.counter);
 
         RequestQueue queue = Volley.newRequestQueue(this);
         JsonRequest<JSONObject> jsonRequest = new JsonObjectRequest(Request.Method.GET, progressUrl + palaceTitle  + "&user=" + username, null,
@@ -109,6 +111,7 @@ public class ViewPalace extends AppCompatActivity {
                         try {
                             float remembered = Integer.parseInt(response.get("remembered").toString());
                             float total = Integer.parseInt(response.get("total").toString());
+                            progressCounter.setText("Remembered " + (int) remembered + " of " + (int) total);
                             final float progress = (remembered / total) * 100;
                             handler.post(new Runnable() {
                                 public void run() {

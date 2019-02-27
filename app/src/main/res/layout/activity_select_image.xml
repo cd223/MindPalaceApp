@@ -30,6 +30,8 @@
             <WebView xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/imagePicker"
                 android:layout_width="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
                 android:layout_height="465dp" />
 
             <LinearLayout
@@ -42,6 +44,7 @@
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
+                    android:textStyle="bold"
                     android:layout_marginTop="10dp"
                     android:background="@color/colorButtonPrimary"
                     android:textSize="30dp"
@@ -55,6 +58,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="10dp"
+                    android:textStyle="bold"
                     android:background="@color/colorButtonPrimary"
                     android:textSize="30dp"
                     android:text="@string/goForwardButton"
@@ -66,6 +70,7 @@
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
+                    android:textStyle="bold"
                     android:layout_marginTop="10dp"
                     android:background="@color/colorButtonPrimary"
                     android:textSize="30dp"
@@ -81,6 +86,8 @@
                 android:layout_marginTop="10dp"
                 android:background="@color/colorButtonPrimary"
                 android:onClick="selectImage"
+                android:textStyle="bold"
+                android:textSize="25dp"
                 android:text="@string/chooseImage"
                 android:textAllCaps="false" />
         </LinearLayout>

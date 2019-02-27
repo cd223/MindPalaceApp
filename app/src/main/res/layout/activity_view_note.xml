@@ -40,6 +40,7 @@
                 android:background="@color/colorButtonPrimary"
                 android:onClick="viewNote"
                 android:text="@string/CheckNotesButton"
+                android:textSize="25dp"
                 android:textAllCaps="false" />
 
             <TextView
@@ -56,10 +57,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_marginTop="10dp"
+                android:textSize="20dp"
                 android:focusable="false"
                 android:inputType="none"
-                android:text="@string/NotesViewTitleLbl"
-                android:textSize="20sp" />
+                android:text="@string/NotesViewTitleLbl" />
 
             <TextView
                 android:id="@+id/noteDescription"
@@ -67,9 +68,9 @@
                 android:layout_height="46dp"
                 android:layout_marginTop="10dp"
                 android:focusable="false"
+                android:textSize="20dp"
                 android:inputType="none"
-                android:text="@string/noteDescriptionLbl"
-                android:textSize="20sp" />
+                android:text="@string/noteDescriptionLbl" />
 
             <ImageView
                 android:id="@+id/checkedImage"

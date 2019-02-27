@@ -32,6 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/NoteDetails"
+                android:textStyle="bold"
                 android:textSize="24sp" />
 
             <EditText
@@ -76,6 +77,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                android:textSize="25dp"
                 android:onClick="deleteNote"
                 android:text="@string/deleteNote"
                 android:textAllCaps="false" />
