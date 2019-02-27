@@ -102,6 +102,7 @@ public class ViewPalace extends AppCompatActivity {
 
     public void viewPalaceProgress() {
         final ProgressBar progressBar = findViewById(R.id.progressBar);
+        final TextView stillToGoLbl = findViewById(R.id.stillToGo);
         final TextView progressMsg = findViewById(R.id.progress);
         palaceTitle = palaceTitle.replace(" ", spaceReplacement);
         final Handler handler = new Handler();
@@ -117,6 +118,10 @@ public class ViewPalace extends AppCompatActivity {
                             float remembered = Integer.parseInt(response.get("remembered").toString());
                             float total = Integer.parseInt(response.get("total").toString());
                             progressCounter.setText("Remembered " + (int) remembered + " of " + (int) total);
+                            if (remembered == total) {
+                                stillToGoLbl.setText("All notes remembered.");
+                                stillToGoLbl.setTextColor(getResources().getColor(R.color.green));
+                            }
                             final float progress = (remembered / total) * 100;
                             handler.post(new Runnable() {
                                 public void run() {
