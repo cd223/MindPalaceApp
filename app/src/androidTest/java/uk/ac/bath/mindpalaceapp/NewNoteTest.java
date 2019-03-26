@@ -21,7 +21,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class CreateNoteTest {
+public class NewNoteTest {
     @Rule
     public ActivityTestRule <SignIn> activityRule = new ActivityTestRule <>(SignIn.class);
 
@@ -36,7 +36,7 @@ public class CreateNoteTest {
     }
 
     @Test
-    public void createPalace() throws InterruptedException {
+    public void createNote() throws InterruptedException {
         onView(withId(R.id.loginUsername))
                 .perform(typeText("cjd47"), closeSoftKeyboard());
         onView(withId(R.id.loginPassword))
@@ -51,11 +51,9 @@ public class CreateNoteTest {
                 .perform(typeText("Test Note"), closeSoftKeyboard());
         onView(withId(R.id.noteDescription))
                 .perform(typeText("Note Created By UI Test"), closeSoftKeyboard());
-        onView(withId(R.id.noteImageUrl))
-                .perform(typeText("http://blog.elasticgrid.com/wp-content/uploads/2015/03/big-size-spain-flag.jpg"), closeSoftKeyboard());
+        onView(withId(R.id.launch_browser)).perform(click());
+        onView(withId(R.id.chooseImage)).perform(click());
 
-        onView(withId(R.id.checkImage)).perform(click());
-        Thread.sleep(2000);
         onView(withId(R.id.new_note)).perform(click());
         Thread.sleep(2000);
         intended(hasComponent(MainMenu.class.getName()), times(2));

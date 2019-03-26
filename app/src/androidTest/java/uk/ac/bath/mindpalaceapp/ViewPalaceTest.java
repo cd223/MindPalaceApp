@@ -50,15 +50,15 @@ public class ViewPalaceTest {
         onView(withId(R.id.track)).perform(click());
         Thread.sleep(2000);
         onView(withId(R.id.palaceTitle))
-                .check(matches(withText("Fruit")));
+                .check(matches(withText("Test Palace")));
         onView(withId(R.id.palaceDescription))
-                .check(matches(withText("Fruit Palace")));
+                .check(matches(withText("Palace Created By UI Test")));
         onData(anything()).inAdapterView(withId(R.id.unrememberedNotes)).atPosition(0).perform(click());
         Thread.sleep(2000);
         onView(withId(R.id.noteDetailsTitle))
-                .check(matches(withText("Apple")));
+                .check(matches(withText("Test Note")));
         onView(withId(R.id.noteDetailsDescription))
-                .check(matches(withText("Apple Description")));
+                .check(matches(withText("Note Created By UI Test")));
 
         onView(withId(R.id.noteImage)).perform(click());
         Thread.sleep(2000);

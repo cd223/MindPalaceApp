@@ -67,13 +67,13 @@ public class ViewNoteTest {
         Thread.sleep(2000);
         onView(withId(R.id.train)).perform(click());
         Thread.sleep(2000);
-        onView(withId(R.id.check_note)).perform(scrollTo(), click());
+        onView(withId(R.id.check_note)).perform(click());
         Thread.sleep(2000);
         onView(withId(R.id.noteViewTitle))
                 .check(matches(withText("Test Note")));
         onView(withId(R.id.noteDescription))
                 .check(matches(withText("Note Created By UI Test")));
-        onView(withId(R.id.rememberedButton)).perform(click());
+        onView(withId(R.id.rememberedButton)).perform(scrollTo(), click());
     }
 
     @Test
@@ -88,12 +88,12 @@ public class ViewNoteTest {
         Thread.sleep(2000);
         onView(withId(R.id.train)).perform(click());
         Thread.sleep(2000);
-        onView(withId(R.id.check_note)).perform(scrollTo(), click());
+        onView(withId(R.id.check_note)).perform(click());
         Thread.sleep(2000);
         onView(withId(R.id.noteViewTitle))
                 .check(matches(withText("Test Note")));
         onView(withId(R.id.noteDescription))
                 .check(matches(withText("Note Created By UI Test")));
-        onView(withId(R.id.unrememberedButton)).perform(click());
+        onView(withId(R.id.unrememberedButton)).perform(scrollTo(), click());
     }
 }
